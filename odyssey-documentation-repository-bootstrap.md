@@ -197,7 +197,7 @@ The default documentation should represent:
 
 Version:
 
-v3.0 (Latest)
+v1.0 (Latest)
 
 Reserve space for a future version selector.
 
