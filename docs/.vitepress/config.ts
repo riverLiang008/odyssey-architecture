@@ -29,7 +29,7 @@ export default withMermaid(
       nav: [
         { text: 'Docs', link: '/introduction/introduction' },
         { text: 'Evolution', link: '/evolution/' },
-        { text: 'GitHub', link: 'https://github.com/<owner>/<repository>' },
+        { text: 'GitHub', link: 'https://github.com/houliang008-netizen/odyssey-architecture' },
       ],
       sidebar: [
         {
@@ -72,9 +72,9 @@ export default withMermaid(
         },
       ],
       search: { provider: 'local' },
-      socialLinks: [{ icon: 'github', link: 'https://github.com/<owner>/<repository>' }],
+      socialLinks: [{ icon: 'github', link: 'https://github.com/houliang008-netizen/odyssey-architecture' }],
       editLink: {
-        pattern: 'https://github.com/<owner>/<repository>/edit/main/:path',
+        pattern: 'https://github.com/houliang008-netizen/odyssey-architecture/edit/main/:path',
         text: 'Edit this page on GitHub',
       },
       lastUpdatedText: 'Last updated',
