@@ -39,9 +39,14 @@ export default withMermaid(
         {
           text: 'Core Concepts',
           items: [
-            { text: 'Pattern + Slot', link: '/core-concepts/pattern-slot' },
+            { text: 'System', link: '/core-concepts/system' },
+            { text: 'Execution Model', link: '/core-concepts/execution-model' },
+            { text: 'Pattern', link: '/core-concepts/pattern' },
+            { text: 'Agent', link: '/core-concepts/agent' },
+            { text: 'Canvas', link: '/core-concepts/canvas' },
             { text: 'Knowledge Space', link: '/core-concepts/knowledge-space' },
-            { text: '2-Level Canvas / Studio', link: '/core-concepts/two-level-canvas' },
+            { text: 'Tool', link: '/core-concepts/tool' },
+            { text: 'Component Ecosystem', link: '/core-concepts/component-ecosystem' },
           ],
         },
         {
