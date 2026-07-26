@@ -1,0 +1,3 @@
+# Pattern
+
+## Reusable Execution Strategy
