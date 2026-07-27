@@ -41,9 +41,9 @@ export default withMermaid(
           items: [
             { text: 'System', link: '/core-concepts/system' },
             { text: 'Pattern', link: '/core-concepts/pattern' },
-            { text: 'Agent', link: '/core-concepts/agent' },
-            { text: 'Canvas', link: '/core-concepts/canvas' },
             { text: 'Knowledge Space', link: '/core-concepts/knowledge-space' },
+            { text: 'Agent', link: '/core-concepts/agent' },
+            { text: 'Canvas', link: '/core-concepts/canvas' }, 
             { text: 'Tool', link: '/core-concepts/tool' },
             { text: 'Component Ecosystem', link: '/core-concepts/component-ecosystem' },
           ],

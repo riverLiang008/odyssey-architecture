@@ -37,7 +37,9 @@ A Pattern is not a single fixed graph instance. Instead, it defines a class of g
 
 A Pattern can be represented as:
 
-\[ P=(G_s,\phi,C) \]
+$$
+P=(G_s,\phi,C)
+$$
 
 where:
 
@@ -47,7 +49,9 @@ where:
 
 The abstract graph:
 
-\[ G_s=(V_s,E_s) \]
+$$
+G_s=(V_s,E_s)
+$$
 
 describes:
 
@@ -57,7 +61,9 @@ describes:
 
 A concrete agent system is represented as:
 
-\[ G_i=(V_i,E_i) \]
+$$
+G_i=(V_i,E_i)
+$$
 
 where:
 
@@ -66,7 +72,9 @@ where:
 
 A concrete system conforms to a Pattern if:
 
-\[ \phi(G_i)\cong G_s \]
+$$
+\phi(G_i)\cong G_s
+$$
 
 where:
 
@@ -89,7 +97,9 @@ A Pattern defines structural rules, while instantiation provides concrete implem
 
 Formally:
 
-\[ S_i=Inst(P,C_i) \]
+$$
+S_i=Inst(P,C_i)
+$$
 
 where:
 
@@ -173,11 +183,15 @@ while still belonging to the same Pattern.
 
 The equivalence is determined after applying an abstraction function:
 
-\[ \phi:G_i\rightarrow G_s \]
+$$
+\phi:G_i\rightarrow G_s
+$$
 
 Two systems are Pattern-equivalent if:
 
-\[ \phi(G_1)\cong\phi(G_2) \]
+$$
+\phi(G_1)\cong\phi(G_2)
+$$
 
 This means:
 
