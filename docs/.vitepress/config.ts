@@ -40,7 +40,6 @@ export default withMermaid(
           text: 'Core Concepts',
           items: [
             { text: 'System', link: '/core-concepts/system' },
-            { text: 'Execution Model', link: '/core-concepts/execution-model' },
             { text: 'Pattern', link: '/core-concepts/pattern' },
             { text: 'Agent', link: '/core-concepts/agent' },
             { text: 'Canvas', link: '/core-concepts/canvas' },
