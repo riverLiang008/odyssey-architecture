@@ -120,7 +120,7 @@ For example:
 
 A Hub Pattern:
 
-```Mermaid
+```mermaid
 flowchart TD
     C[Coordinator]
     W1[Worker]
@@ -134,7 +134,7 @@ flowchart TD
 
 can be instantiated as:
 
-```Mermaid
+```mermaid
 flowchart TD
     P[Research Planner]
 
@@ -149,7 +149,7 @@ flowchart TD
 
 or:
 
-```Mermaid
+```mermaid
 flowchart TD
     P[Project Manager]
 
@@ -211,7 +211,7 @@ The following examples represent different Pattern instances.
 
 Abstract structure:
 
-```Mermaid
+```mermaid
 flowchart TD
     C[Coordinator]
     W1[Worker]
@@ -242,7 +242,7 @@ Typical applications:
 
 Abstract structure:
 
-```Mermaid
+```mermaid
 flowchart LR
     A[Agent A] --> B[Agent B]
     B --> C[Agent C]
@@ -266,7 +266,7 @@ Typical applications:
 
 Abstract structure:
 
-```Mermaid
+```mermaid
 flowchart TD
     A[Agent]
 ```
@@ -283,7 +283,7 @@ Characteristics:
 
 Abstract structure:
 
-```Mermaid
+```mermaid
 flowchart TD
     P[Planner]
 
@@ -311,7 +311,7 @@ Characteristics:
 
 The following examples demonstrate different concrete graph realizations that conform to the same Pattern abstraction:
 
-```Mermaid
+```mermaid
 flowchart TD
 
 subgraph A[Instance A]
