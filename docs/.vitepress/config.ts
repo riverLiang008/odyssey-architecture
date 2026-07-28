@@ -74,6 +74,12 @@ export default withMermaid(
             { text: 'WorldQuant Alpha', link: '/examples/worldquant-alpha' },
           ],
         },
+        {
+          text: 'Design Notes',
+          items: [
+            { text: '001 Why Spatial UI', link: '/design-notes/001-why-spatial-ui.md' },
+          ],
+        },
       ],
       search: { provider: 'local' },
       socialLinks: [{ icon: 'github', link: 'https://github.com/riverLiang008/odyssey-architecture' }],
