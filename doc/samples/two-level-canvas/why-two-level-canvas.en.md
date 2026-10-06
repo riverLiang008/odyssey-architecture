@@ -61,13 +61,13 @@ The three-color Thinking Ownership system and the two Canvas levels are therefor
 
 Odyssey needs both.
 
-![The Agent Variables panel, with numbered annotations for the System, User-managed, Shared, and Agent-managed variable groups](/images/design-decisions/two-level-canvas/thinking-ownership-annotated.png)
+![The Agent Variables panel, with numbered annotations for the System, User-managed, Shared, and Agent-managed variable groups](./release/assets/thinking-ownership-annotated.png)
 
 *Figure 1a: The current expression of Thinking Ownership in Agent Variables. ① Read-only state provided by the System; ② User-managed in green; ③ Shared in yellow; ④ Agent-managed in red or pink. Figma node `119:2`, exported on 2026-10-02 and annotated on 2026-10-03.*
 
 This figure also shows that Thinking Ownership does not depend on a single fixed three-color region. The same language of responsibility can appear in Workflow nodes, variable groups, and resource permissions. It identifies responsibility, not the design scale of the Canvas.
 
-![Workflow nodes in Focus Mode, the Node Palette, and Agent Variables use a consistent Thinking Ownership color language](/images/design-decisions/two-level-canvas/thinking-ownership-across-canvas.png)
+![Workflow nodes in Focus Mode, the Node Palette, and Agent Variables use a consistent Thinking Ownership color language](./release/assets/thinking-ownership-across-canvas.png)
 
 *Figure 1b: The same Thinking Ownership colors across different interface objects. In the Configure view of Focus Mode on the left, open-ended Agent Actions use red or pink, while deterministic Tasks use green. The Node Palette in the center continues to distinguish Branch / Loop, Agent Action, and Task with yellow, red or pink, and green. Agent Variables on the right use the same colors to organize Shared, Agent-managed, and User-managed state. Composed from Figma nodes `166:2`, `62:2`, and `119:2`; exported and assembled on 2026-10-03.*
 
@@ -92,7 +92,7 @@ This restraint keeps the Journey Canvas at the system scale. Readers can first i
 
 It presents visible and editable system structure—not the model’s private internal reasoning.
 
-![Odyssey's Journey Canvas, with numbered annotations for System configuration, the selected Agent Slot, and the read-only Workflow Preview](/images/design-decisions/two-level-canvas/journey-canvas-annotated.png)
+![Odyssey's Journey Canvas, with numbered annotations for System configuration, the selected Agent Slot, and the read-only Workflow Preview](./release/assets/journey-canvas-annotated.png)
 
 *Figure 2: The system-level view of the Journey Canvas. ① The first row of System configuration contains Input Guardrail, Main Execution, and Output Guardrail; Execution Behavior spans all three in the second row. ② Research Agent occupies an Agent Slot in the Main Execution Pattern. ③ The read-only Workflow Preview in the lower-right corner provides a local preview before entering the Agent Workflow. Figma node `59:2`, exported on 2026-10-02 and annotated on 2026-10-03.*
 
@@ -102,7 +102,7 @@ The Journey Canvas does not begin with a set of predefined Agent roles. When cre
 
 The current design presents four simplified starting points: Hub and Spoke, Circular Loop, Linear Sequence, and Solo Component. They describe relationship structures—coordination, iteration, sequence, or a single component—before prescribing role names such as Planner, Reviewer, or Worker.
 
-![System Pattern selection in the Create OdyJourney dialog](/images/design-decisions/two-level-canvas/system-pattern-selection.png)
+![System Pattern selection in the Create OdyJourney dialog](./release/assets/system-pattern-selection.png)
 
 *Figure 3: Selecting a System Pattern when creating an OdyJourney. Each option first expresses the shape of the relationship as a minimal topology, then offers a short indication of the work it suits. Figma node `417:33`, exported on 2026-10-03.*
 
@@ -118,7 +118,7 @@ The Agent Workflow Canvas therefore has its own node language and editing space.
 
 Once separated, both levels can remain clear. The Journey Canvas does not need to carry every node-level detail, and the Agent Workflow Canvas does not need to repeat the entire system topology.
 
-![The Research Agent's Workflow Canvas, with numbered annotations for the Node Palette, the Agent's internal control flow, and the Available Tools panel](/images/design-decisions/two-level-canvas/agent-workflow-canvas-annotated.png)
+![The Research Agent's Workflow Canvas, with numbered annotations for the Node Palette, the Agent's internal control flow, and the Available Tools panel](./release/assets/agent-workflow-canvas-annotated.png)
 
 *Figure 4: The Workflow Canvas after entering Research Agent. ① Node Palette; ② the Agent’s internal control flow; ③ Available Tools. All three areas are organized around one Agent. The edges here represent execution relationships inside the Agent, not collaboration relationships among Agents in the Journey. Figma node `62:2`, exported on 2026-10-02 and annotated on 2026-10-03.*
 
@@ -134,7 +134,7 @@ Agent Slot
 → Full Agent Workflow Canvas
 ```
 
-![The progressive transition from an Agent Slot on the Journey Canvas, through a read-only Workflow Preview, to the full Agent Workflow Canvas](/images/design-decisions/two-level-canvas/cross-level-transition.png)
+![The progressive transition from an Agent Slot on the Journey Canvas, through a read-only Workflow Preview, to the full Agent Workflow Canvas](./release/assets/cross-level-transition.png)
 
 *Figure 5: The progressive transition across the two Canvas levels. ① Select a configured Agent Slot on the Journey Canvas. ② Inspect a read-only Workflow Preview without leaving the system view. ③ Enter the full Agent Workflow Canvas when deeper editing is needed. Composed from Figma nodes `59:2` and `62:2` on 2026-10-04.*
 
