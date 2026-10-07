@@ -14,7 +14,7 @@ Odyssey therefore does not make predefined roles the first step in system design
 
 This is what Odyssey means by **relationships before roles**.
 
-![The four System Patterns offered when creating an OdyJourney](/images/design-decisions/relationships-before-roles/system-pattern-selection.png)
+![The four System Patterns offered when creating an OdyJourney](./assets/system-pattern-selection.png)
 
 *Figure 1: The current design offers four System Patterns: Hub and Spoke, Circular Loop, Linear Sequence, and Solo Component. The number of nodes shown on each card illustrates the relationship shape; it does not define a fixed Slot count. Figma node `417:33`.*
 
@@ -72,7 +72,7 @@ Odyssey V1 chooses the former. Designers can change the scale of a structure and
 [ Slot ]
 ```
 
-![The current Solo Component Pattern card](/images/design-decisions/relationships-before-roles/pattern-solo-component.png)
+![The current Solo Component Pattern card](./assets/pattern-solo-component.png)
 
 *Figure 2a: Solo Component uses one isolated node to express a fixed single-Agent structure. `solo` is not an Agent name; it emphasizes that the Slot has no internal Route to another Agent Slot. Figma node `419:77`.*
 
@@ -88,7 +88,7 @@ It is less suitable when responsibility must be divided, independent review is r
 [ Slot 1 ] → [ Slot 2 ] → [ Slot 3 ] → …
 ```
 
-![The current Linear Sequence Pattern card](/images/design-decisions/relationships-before-roles/pattern-linear-sequence.png)
+![The current Linear Sequence Pattern card](./assets/pattern-linear-sequence.png)
 
 *Figure 2b: The Linear Sequence card uses four nodes to illustrate a one-way order. Four is only an example count that makes the relationship shape recognizable; the actual Slot count is variable. Figma node `419:67`.*
 
@@ -108,7 +108,7 @@ Linear Sequence becomes strained when work frequently returns to an earlier stag
             [ Spoke ]
 ```
 
-![The current Hub and Spoke Pattern card](/images/design-decisions/relationships-before-roles/pattern-hub-and-spoke.png)
+![The current Hub and Spoke Pattern card](./assets/pattern-hub-and-spoke.png)
 
 *Figure 2c: The Hub and Spoke card emphasizes the direct relationship between one central node and several peripheral nodes. The four Spokes are a topology illustration; the number of Spokes is variable, while the Hub must remain. Figma node `419:39`.*
 
@@ -128,7 +128,7 @@ It is less suitable for a pipeline that genuinely depends on strict stage-to-sta
           [ Slot 4 ]
 ```
 
-![The current Circular Loop Pattern card](/images/design-decisions/relationships-before-roles/pattern-circular-loop.png)
+![The current Circular Loop Pattern card](./assets/pattern-circular-loop.png)
 
 *Figure 2d: The Circular Loop card uses four nodes to illustrate a one-way closed cycle, with a distinct visual marker for its single entry. Four is an example count; the actual structure requires at least two Slots. Figma node `419:54`; the loop diagram is child node `423:37`.*
 

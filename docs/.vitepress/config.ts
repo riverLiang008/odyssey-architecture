@@ -68,6 +68,7 @@ const chineseSidebar = [
     text: '设计决策',
     items: [
       { text: '为什么是双层 Canvas', link: '/zh/core-concepts/two-level-canvas' },
+      { text: '关系先于角色', link: '/zh/core-concepts/pattern' },
     ],
   },
 ]
