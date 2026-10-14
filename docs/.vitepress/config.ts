@@ -13,6 +13,13 @@ const base = repository
 
 const englishSidebar = [
   {
+    text: 'Start Here',
+    items: [
+      { text: 'Why Odyssey?', link: '/why-odyssey' },
+      { text: 'Design Principles', link: '/design-principles' },
+    ],
+  },
+  {
     text: 'Key Decisions',
     items: [
       { text: 'Why Two Canvas Levels?', link: '/core-concepts/two-level-canvas' },
@@ -21,9 +28,23 @@ const englishSidebar = [
       { text: 'Why Knowledge Space Is More Than RAG', link: '/core-concepts/knowledge-space-more-than-rag' },
     ],
   },
+  {
+    text: 'Design Journey',
+    items: [
+      { text: 'Design Evolution', link: '/design-evolution' },
+      { text: 'Current State and Limitations', link: '/current-state-and-limitations' },
+    ],
+  },
 ]
 
 const chineseSidebar = [
+  {
+    text: '从这里开始',
+    items: [
+      { text: '为什么是 Odyssey', link: '/zh/why-odyssey' },
+      { text: '设计原则', link: '/zh/design-principles' },
+    ],
+  },
   {
     text: '设计决策',
     items: [
@@ -31,6 +52,13 @@ const chineseSidebar = [
       { text: '关系先于角色', link: '/zh/core-concepts/pattern' },
       { text: '为什么需要有边界的自主性', link: '/zh/core-concepts/bounded-autonomy' },
       { text: '为什么 Knowledge Space 不只是 RAG', link: '/zh/core-concepts/knowledge-space-more-than-rag' },
+    ],
+  },
+  {
+    text: '设计进程',
+    items: [
+      { text: '设计演化', link: '/zh/design-evolution' },
+      { text: '当前状态与限制', link: '/zh/current-state-and-limitations' },
     ],
   },
 ]
@@ -95,6 +123,7 @@ export default withMermaid(
       theme: 'default',
     },
     themeConfig: {
+      logo: '/images/brand/odyssey-mark-v6.svg',
       search: { provider: 'local' },
       socialLinks: [
         { icon: 'github', link: 'https://github.com/riverLiang008/odyssey-architecture' },

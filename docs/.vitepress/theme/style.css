@@ -30,3 +30,64 @@
     margin: 0 0 1rem;
   }
 }
+
+/* Brand lockup */
+.VPNavBarTitle .logo {
+  width: 30px;
+  height: auto;
+}
+
+.VPNavBarTitle .title {
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Documentation hierarchy */
+.VPSidebarItem.level-0 {
+  padding-bottom: 14px;
+}
+
+.VPSidebarItem.level-0 + .VPSidebarItem.level-0 {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--vp-c-text-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.VPSidebarItem.level-1 .link {
+  margin: 2px 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  line-height: 1.45;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.VPSidebarItem.level-1 .link:hover {
+  background: var(--vp-c-default-soft);
+}
+
+.VPSidebarItem.level-1.is-active > .item .link {
+  background: var(--vp-c-brand-soft);
+}
+
+.VPSidebarItem.level-1.is-active > .item .text {
+  font-weight: 650;
+}
+
+.placeholder-page {
+  margin-top: 2rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+}

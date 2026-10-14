@@ -665,8 +665,14 @@ Review record:
 ### ODOC-402 重构公开导航
 
 - Priority: `P1`
-- Status: `Todo`
+- Status: `Done`
 - Dependencies: ODOC-401
+
+Decision record:
+
+- River 于 2026-10-14 决定在公开侧栏中完整呈现已经确认的首版结构；尚未完成的章节使用明确标注“内容准备中”的双语占位页承接。
+- 该决定替代此前“未完成页面不得进入公开导航”的约束，但不将占位内容伪装成已经完成的设计文档。
+- Research Assistant Walkthrough 仍保持 Deferred，不进入当前公开导航。
 
 建议首版导航：
 
@@ -685,7 +691,7 @@ Odyssey
 
 验收标准：
 
-- 公开导航无空页面；
+- 规划中的页面均有有效路由；未完成页面明确显示内容状态；
 - 不包含 Research Assistant Walkthrough；
 - Future 内容不伪装成当前目录；
 - 页面路径和链接有效。
