@@ -1,0 +1,32 @@
+.design-source-link {
+  float: right;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.75rem 1rem;
+}
+
+.design-source-link a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  color: var(--vp-c-brand-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.design-source-link a:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+@media (max-width: 640px) {
+  .design-source-link {
+    float: none;
+    margin: 0 0 1rem;
+  }
+}

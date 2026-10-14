@@ -577,8 +577,17 @@ Completion record:
 ### ODOC-305 编写《为什么 Knowledge Space 不只是 RAG》中文版
 
 - Priority: `P1`
-- Status: `Todo`
+- Status: `Done`
 - Dependencies: ODOC-201, ODOC-001
+
+Review record:
+
+- Chinese draft: `doc/samples/knowledge-space-more-than-rag/why-knowledge-space-is-more-than-rag.zh.md`
+- Review guide: `doc/samples/knowledge-space-more-than-rag/README.md`
+- Draft completed: 2026-10-14
+- Reviewer: River
+- Review result: Approved on 2026-10-14; Chinese version frozen as the semantic baseline for the English draft.
+- Note: 在页面模板尚未单独冻结时，沿用前三篇已通过 Review 的设计决策文章结构；不改变中文先行流程。
 
 验收标准：
 

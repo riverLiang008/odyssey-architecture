@@ -13,52 +13,12 @@ const base = repository
 
 const englishSidebar = [
   {
-    text: 'Introduction',
-    items: [{ text: 'Introduction', link: '/introduction/introduction' }],
-  },
-  {
-    text: 'Core Concepts',
+    text: 'Key Decisions',
     items: [
-      { text: 'System', link: '/core-concepts/system' },
-      { text: 'Pattern', link: '/core-concepts/pattern' },
-      { text: 'Knowledge Space', link: '/core-concepts/knowledge-space' },
-      { text: 'Agent', link: '/core-concepts/workflow-canvas' },
-      { text: 'Canvas', link: '/core-concepts/canvas' },
       { text: 'Why Two Canvas Levels?', link: '/core-concepts/two-level-canvas' },
-      { text: 'Tool', link: '/core-concepts/tool' },
-      { text: 'Component Ecosystem', link: '/core-concepts/component-ecosystem' },
-    ],
-  },
-  {
-    text: 'Architecture',
-    items: [
-      { text: 'Level 1 — System', link: '/architecture/level-1-system' },
-      { text: 'Level 2 — Execution Module', link: '/architecture/level-2-execution-module' },
-      { text: 'Level 3 — Agent', link: '/architecture/level-3-agent' },
-      { text: 'Level 4 — Node', link: '/architecture/level-4-node' },
-    ],
-  },
-  {
-    text: 'Benchmark',
-    items: [
-      { text: 'Claude Code', link: '/benchmark/claude-code' },
-      { text: 'Coze', link: '/benchmark/coze' },
-      { text: 'Dify', link: '/benchmark/dify' },
-      { text: 'Amazon Bedrock', link: '/benchmark/amazon-bedrock' },
-      { text: 'LangGraph', link: '/benchmark/langgraph' },
-    ],
-  },
-  {
-    text: 'Examples',
-    items: [
-      { text: 'Auto-generator', link: '/examples/auto-generator' },
-      { text: 'WorldQuant Alpha', link: '/examples/worldquant-alpha' },
-    ],
-  },
-  {
-    text: 'Design Notes',
-    items: [
-      { text: '001 Why Spatial UI', link: '/design-notes/001-why-spatial-ui.md' },
+      { text: 'Why Relationships Before Roles?', link: '/core-concepts/pattern' },
+      { text: 'Why Bounded Autonomy?', link: '/core-concepts/bounded-autonomy' },
+      { text: 'Why Knowledge Space Is More Than RAG', link: '/core-concepts/knowledge-space-more-than-rag' },
     ],
   },
 ]
@@ -69,6 +29,8 @@ const chineseSidebar = [
     items: [
       { text: '为什么是双层 Canvas', link: '/zh/core-concepts/two-level-canvas' },
       { text: '关系先于角色', link: '/zh/core-concepts/pattern' },
+      { text: '为什么需要有边界的自主性', link: '/zh/core-concepts/bounded-autonomy' },
+      { text: '为什么 Knowledge Space 不只是 RAG', link: '/zh/core-concepts/knowledge-space-more-than-rag' },
     ],
   },
 ]
@@ -87,8 +49,7 @@ export default withMermaid(
         link: '/core-concepts/two-level-canvas',
         themeConfig: {
           nav: [
-            { text: 'Docs', link: '/introduction/introduction' },
-            { text: 'Evolution', link: '/evolution/' },
+            { text: 'Docs', link: '/core-concepts/two-level-canvas' },
             { text: 'GitHub', link: 'https://github.com/riverLiang008/odyssey-architecture' },
           ],
           sidebar: englishSidebar,
