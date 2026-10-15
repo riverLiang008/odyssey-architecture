@@ -542,8 +542,17 @@ Review record:
 ### ODOC-302 编写《设计原则》中文版
 
 - Priority: `P1`
-- Status: `Todo`
+- Status: `Done`
 - Dependencies: ODOC-201, ODOC-301
+
+Review record:
+
+- Scope: `doc/samples/design-principles/design-principles-scope.md`
+- Chinese draft: `doc/samples/design-principles/design-principles.zh.md`
+- Review guide: `doc/samples/design-principles/README.md`
+- Draft completed: 2026-10-15
+- Reviewer: River
+- Review result: Approved on 2026-10-15 after condensing the page into a short orientation chapter; Chinese version frozen as the semantic baseline for the English draft.
 
 首版四条原则：
 
