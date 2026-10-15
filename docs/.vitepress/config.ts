@@ -31,7 +31,13 @@ const englishSidebar = [
   {
     text: 'Design Journey',
     items: [
-      { text: 'Design Evolution', link: '/design-evolution' },
+      {
+        text: 'Design Evolution',
+        link: '/design-evolution',
+        items: [
+          { text: 'How the Odyssey Mark Took Shape', link: '/design-evolution/odyssey-mark' },
+        ],
+      },
       { text: 'Current State and Limitations', link: '/current-state-and-limitations' },
     ],
   },
@@ -57,7 +63,13 @@ const chineseSidebar = [
   {
     text: '设计进程',
     items: [
-      { text: '设计演化', link: '/zh/design-evolution' },
+      {
+        text: '设计演化',
+        link: '/zh/design-evolution',
+        items: [
+          { text: 'Odyssey 图标是如何形成的', link: '/zh/design-evolution/odyssey-mark' },
+        ],
+      },
       { text: '当前状态与限制', link: '/zh/current-state-and-limitations' },
     ],
   },
