@@ -515,8 +515,17 @@ Completion record:
 ### ODOC-301 编写《为什么是 Odyssey》中文版
 
 - Priority: `P1`
-- Status: `Todo`
+- Status: `Done`
 - Dependencies: ODOC-201
+
+Review record:
+
+- Scope: `doc/samples/why-odyssey/why-odyssey-scope.md`
+- Chinese draft: `doc/samples/why-odyssey/why-odyssey.zh.md`
+- Review guide: `doc/samples/why-odyssey/README.md`
+- Draft completed: 2026-10-14
+- Reviewer: River
+- Review result: Approved on 2026-10-14; Chinese version frozen as the semantic baseline for the English draft.
 
 范围：
 

@@ -1,7 +1,140 @@
+---
+figma: https://www.figma.com/design/P3EF9io2DhyhwkNYBVqB5Z/Odyssey-Design?node-id=59-2
+---
+
 # 为什么是 Odyssey
 
-> 本章属于已经确认的文档结构，内容正在准备中。
+> Odyssey 探索的不是如何让模型完成更多一次性任务，而是人如何理解、塑造并维护一项可以持续演化的 AI Agent 能力。
 
-<div class="placeholder-page">
-本页将解释 Odyssey 想要探索的问题，以及为什么 AI Agent 系统需要围绕模型行为建立显式、可编辑的结构。
-</div>
+## 一次成功的回答，不等于一项可以持续存在的能力
+
+今天的大多数 AI 交互都从一个非常短的时间尺度开始：提出问题，提供上下文，模型给出回答，任务结束。
+
+对于一次性的写作、总结或信息查询，这种形式已经非常有效。用户可以把目标、资料和限制写进 Prompt，也可以在对话中逐步补充要求。系统不必拥有稳定结构，只要当前回答足够好即可。
+
+但当同一项工作跨越多轮收集、判断、修订和审核时，问题会发生变化。
+
+新一轮工作需要知道的不再只是“这次要回答什么”，还包括：之前采用了什么协作结构；哪些步骤必须固定，哪些判断可以交给 Agent；它可以使用哪些 Tool 和知识；哪些状态由人维护，哪些状态允许 Agent 更新；已有资料之间是什么关系；这项能力下一次被打开时，应该从哪里继续修改。
+
+如果这些内容只能依赖一段不断增长的聊天历史，或者每次重新拼装成一个更长的 Prompt，那么系统拥有的只是上下文延续，而不是设计连续性。
+
+Odyssey 从这里开始。
+
+## “长期”不是让 Agent 永远运行
+
+长期 Agent system 很容易被想象成一个持续在线、无人值守、能够自己规划一切的 Agent。Odyssey 并不以这种承诺定义“长期”。
+
+这里的长期首先是一组可以被观察的连续性：
+
+- 一个完整能力的结构可以被保存、再次打开和修改；
+- Agent 的协作位置与内部 Workflow 可以在下一轮工作中继续使用，也可以被人重新设计；
+- Tool、Variable、知识与权限边界不需要每次从自然语言重新解释；
+- 文档和知识关系可以随着新的材料进入而积累、修订和接受审阅。
+
+这种连续性不要求系统始终处于运行状态。一个 OdyJourney 可以暂时没有任何执行，却仍然作为一项可持续编辑的能力存在。
+
+因此，Odyssey 关注的不是 Agent 能连续工作多少小时，而是：**经过多轮工作之后，人是否仍然能够理解这项能力由什么构成，为什么这样构成，以及下一步应该在哪里修改它。**
+
+## 更长的 Prompt 仍然把结构压在文本里
+
+最直接的解决方式，是把更多信息写入 Prompt：目标、角色、步骤、工具说明、输出格式、审核规则和历史背景都可以放进去。
+
+这可以让一次模型调用拥有更完整的上下文，却也会让几种不同性质的决定混在同一段文本中。
+
+“先检索再写作”可能是固定流程；“证据不足时如何继续”可能需要开放式判断；“谁负责最终审核”属于协作关系；“哪些资料可以读取”属于资源边界；“当前草稿由谁维护”又属于状态责任。它们都可以被写成句子，但仅仅写在一起，并不会自动形成可检查的系统结构。
+
+当结构只存在于 Prompt 中，人很难局部修改其中一个决定而不影响其他部分，也很难快速确认某个 Agent 到底获得了哪些能力。Prompt 仍然重要，但它不应该独自承担整个 Agent system 的架构。
+
+## 一个拥有很多 Tool 的 Agent，也不等于一个清楚的系统
+
+另一种常见方向，是给一个 Agent 足够多的 Tool 和知识，让它自行规划如何完成目标。
+
+这种方式适合无法提前枚举的工作，也能减少流程配置。但随着任务变复杂，重要决定会逐渐被集中到一个难以检查的内部过程里：Agent 为什么选择这条路径？什么时候应该交给另一个责任位置？哪些步骤必须重复？什么条件下必须停止？某个 Tool 是被允许使用，还是已经被固定为流程的一部分？
+
+Odyssey 不反对 Agent 作出开放式判断。它质疑的是：是否应该因为需要自主性，就把系统关系、控制边界和资源范围也一起交给一个黑盒式的“Agent 会处理”。
+
+自主性应当存在，但它需要位置。
+
+## 传统 Workflow 也不能独自回答这个问题
+
+Workflow 采用另一种方式获得清晰性：把步骤、条件和顺序预先画出来。对于可枚举的过程，这种表达非常有价值。
+
+但 AI Agent 的工作并不总能预先拆成固定步骤。研究、判断、比较和修订经常需要根据当前信息决定下一步。如果为了保持可视化而把每次可能的判断都变成节点，Workflow 会迅速膨胀；如果用一个大模型节点吸收所有不确定性，结构又会重新消失在节点内部。
+
+问题因此不是在 Workflow 与 Agent 之间选择一个。
+
+真正的问题是：**哪些决定应该由人预先确定，哪些决定值得交给 Agent；哪些关系属于多个 Agent 的协作结构，哪些控制只属于一个 Agent 内部；知识、能力和状态又如何跨越多轮工作持续存在。**
+
+## Odyssey 把能力本身变成可持续编辑的对象
+
+Odyssey 使用 OdyJourney 表达一个完整、可持续编辑的能力配置。
+
+OdyJourney 不是一次执行记录，也不是一段聊天历史。它组织系统级结构、Agent 之间的协作关系，以及每个 Agent 所拥有的 Agent Workflow。Agent Workflow 再进一步组织确定性 Task、开放式 Agent Action、Branch、Loop，以及它们可以使用的知识、Tool 和 Variable。
+
+```text
+OdyJourney
+├── 系统级结构与协作 Pattern
+├── Agent Slot 与具体 Agent
+│   └── 每个 Agent 拥有自己的 Agent Workflow
+├── 可引用的 Tool 与状态边界
+└── 可持续维护的 Knowledge Space
+```
+
+这里的重点不是层级越多越好，而是让不同问题拥有不同的设计位置。人不必通过一段总 Prompt 同时理解整个系统，也不必把所有复杂性铺在一张无限 Canvas 上。
+
+一个能力被再次打开时，读者应该能够先理解它的整体协作结构，再进入某个 Agent 查看内部 Workflow；能够区分确定性控制与开放式判断；能够看见 Agent 被允许依赖哪些知识、采取哪些行动，以及维护哪些状态。
+
+Odyssey 试图让这些设计决定成为可以交流、检查和修改的对象。
+
+## 四个关键决定来自同一个问题
+
+Odyssey 当前的四个关键设计决定并不是四组彼此独立的功能。
+
+**[双层 Canvas](/zh/core-concepts/two-level-canvas)** 区分两个设计尺度：Journey Canvas 解释多个 Agent 如何组成系统，Agent Workflow Canvas 解释一个 Agent 如何完成自己的工作。它避免系统拓扑与局部控制流争夺同一套节点和连线。
+
+**[关系先于角色](/zh/core-concepts/pattern)**让 Pattern 先定义稳定的协作位置和信息流，再由具体 Agent 的 Goal、Workflow 和资源形成角色。系统因此不必把 Planner、Researcher 或 Reviewer 固化成永远不变的类型。
+
+**[有边界的自主性](/zh/core-concepts/bounded-autonomy)**把自主判断放进明确的 Agent Action，同时保留 Task、Branch 和 Loop 等显式控制结构。Agent 可以在被提供的 Knowledge Spaces、Toolbox 和状态权限内选择行动，但不能把整个系统边界也一起改写。
+
+**[Knowledge Space 不只是 RAG](/zh/core-concepts/knowledge-space-more-than-rag)**则让知识跨越一次调用持续存在。资料不仅可以被检索进入上下文，还可以拥有面向人的文件结构、面向语义的关系，以及自己的维护生命周期。
+
+它们共同回答的是同一个问题：当一项 AI Agent 能力需要被反复使用和继续设计时，人如何保持对结构、责任、行动与知识的理解。
+
+## 可见的是设计结构，不是模型的私有思维
+
+Odyssey 使用 Canvas、节点、颜色、关系和资源配置把系统结构放到界面上。这种可见性有明确边界。
+
+它可以呈现协作位置、控制流、信息关系、资源访问、状态责任和自主性发生的位置。它不能保证展示模型运行时的全部内部推理，也不等于能够读取模型的私有 Chain of Thought。
+
+Odyssey 想要改善的是设计可理解性：在人决定如何组合 Agent system 时，关键架构判断不必全部埋在 Prompt、配置表单或模型内部。未来即使加入运行记录，那也属于运行可追踪性，而不是 Canvas 天然提供的能力。
+
+## 这是一套 Human-AI Collaboration System Prototype
+
+Odyssey 现阶段最适合被理解为一套 **Human-AI Collaboration System Prototype**：它探索人如何理解、配置并约束由 AI Agent 组成的系统，而不是试图证明一个已经能够执行真实任务的 Agent 平台。
+
+这套 Prototype 最值得展示的部分，是它背后的设计思想、信息架构和交互逻辑。OdyJourney、Pattern、双层 Canvas、Thinking Ownership、Agent Workflow 与 Knowledge Space 共同形成了一种可以被查看、讨论和继续修改的系统表达，而不是一组等待执行引擎补齐之后才有意义的界面。
+
+它提出了一套正在被持续验证的设计语言：用 OdyJourney 保存完整能力，用 Pattern 表达协作关系，用双层 Canvas 分离系统与 Agent 内部尺度，用 Thinking Ownership 和 Variable 权限表达责任，用 Agent Action 与显式控制结构组合自主性，再用 Knowledge Space 承载长期知识环境。
+
+当前没有为 Odyssey 开发执行 kernel 的计划。因此，这些界面和领域模型不应被当作一个尚未完成的运行平台承诺，也不应被用来推断真实执行中的可靠性、评估、成本、权限、审计或错误恢复能力。这些是生产级 Agent 平台必须回答的问题，但不属于这套 Prototype 当前试图验证的范围。
+
+不以成熟执行平台为目标，并不使这些设计问题失去价值。相反，这正是公开这套文档的原因：把关键问题、设计选择、取舍和未解决部分放在一起，让别人能够理解这套 Human-AI Collaboration System 为什么被设计成现在的样子，并判断这些选择是否成立。
+
+## Odyssey 的设计命题
+
+Odyssey 不是在尝试隐藏复杂性，也不是把所有复杂性都交给 Agent。
+
+它探索的是另一条路径：
+
+> 让人能够通过可见、可编辑的结构，理解并塑造一项长期存在的 AI Agent 能力——包括它如何协作、在哪里自主、可以使用什么，以及它依赖的知识如何持续演化。
+
+这也是后续每一篇设计文档共同展开的命题。
+
+## 设计来源
+
+- 首版定位与信息架构：`doc/planning/odyssey-architecture-documentation-redesign-proposal.md`；
+- 首版公开术语：`doc/foundations/first-release-terminology.md`；
+- 可见性表达边界：`doc/foundations/visibility-language-guidelines.md`；
+- 当前产品信息架构：`odyssey/doc/product/information-architecture/odyssey-figma-information-architecture.md`；
+- 当前领域约束：`odyssey/doc/architecture/domain/odyssey-v1-design-constraints.md`；
+- 相关设计决定：《为什么是双层 Canvas》《关系先于角色》《为什么需要有边界的自主性》《为什么 Knowledge Space 不只是 RAG》。
