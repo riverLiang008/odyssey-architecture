@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Odyssey
-  text: Designing Agent Systems as Systems
+  text: The Design Reasoning Behind Odyssey
   tagline: A design documentation project about visible structure, bounded autonomy, shared knowledge, and a language that connects people, Canvas, and LLMs.
   image:
     src: /images/brand/odyssey-mark-v6.svg

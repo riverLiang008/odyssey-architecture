@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Odyssey
-  text: 把 Agent 系统当作系统来设计
+  text: Odyssey 背后的设计思考
   tagline: 一组关于可见结构、有边界的自主性、共享知识，以及连接人、Canvas 与 LLM 的设计文档。
   image:
     src: /images/brand/odyssey-mark-v6.svg
