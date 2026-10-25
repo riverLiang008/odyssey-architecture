@@ -26,6 +26,7 @@ const englishSidebar = [
       { text: 'Why Relationships Before Roles?', link: '/core-concepts/pattern' },
       { text: 'Why Bounded Autonomy?', link: '/core-concepts/bounded-autonomy' },
       { text: 'Why Knowledge Space Is More Than RAG', link: '/core-concepts/knowledge-space-more-than-rag' },
+      { text: 'Why Odyssey Needs a Language', link: '/core-concepts/workflow-language' },
     ],
   },
   {
@@ -58,6 +59,7 @@ const chineseSidebar = [
       { text: '关系先于角色', link: '/zh/core-concepts/pattern' },
       { text: '为什么需要有边界的自主性', link: '/zh/core-concepts/bounded-autonomy' },
       { text: '为什么 Knowledge Space 不只是 RAG', link: '/zh/core-concepts/knowledge-space-more-than-rag' },
+      { text: '为什么 Odyssey 需要一门语言', link: '/zh/core-concepts/workflow-language' },
     ],
   },
   {
