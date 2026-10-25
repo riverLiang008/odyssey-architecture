@@ -16,6 +16,8 @@ Odyssey therefore introduces a domain-specific language alongside the Canvas. In
 
 Ody is not a second Agent model. It is a textual representation of Odyssey's existing concepts: the same Agent Workflow can be seen and manipulated on the Canvas, or read and edited as DSL source.
 
+For the concrete mapping between Ody syntax and Odyssey concepts, continue to [How Ody Expresses an Agent Workflow](/language/syntax-and-semantic-model).
+
 ![An Agent Workflow Canvas and DSL Edit showing the same Workflow](/images/design-decisions/workflow-language/canvas-and-dsl-editor.png)
 
 *Figure 1: The Canvas and DSL Edit show the same Agent Workflow side by side. The Canvas expresses structure through nodes and edges; Ody source expresses Variables, nodes, and relationships as text. `Synced With Canvas` means that both authoring surfaces currently refer to the same semantic configuration. Screenshot from the current Odyssey DSL Edit implementation, 2026-10-25.*
@@ -115,6 +117,8 @@ workflow "Research Agent" version "0.1" {
 ```
 
 This source says nothing about where the node should appear on the Canvas. It still expresses the Agent Action's purpose, cognitive boundary, action boundary, state, and control relationships.
+
+The complete public syntax walkthrough—including Variables, the four node types, resources, Edges, named Ends, and identity boundaries—is available in [Syntax and Semantic Model](/language/syntax-and-semantic-model).
 
 Here, `knowledge` and `toolbox` are not simply two collections of dependencies.
 

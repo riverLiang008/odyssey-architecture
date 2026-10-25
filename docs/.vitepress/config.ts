@@ -30,6 +30,12 @@ const englishSidebar = [
     ],
   },
   {
+    text: 'Ody Language',
+    items: [
+      { text: 'Syntax and Semantic Model', link: '/language/syntax-and-semantic-model' },
+    ],
+  },
+  {
     text: 'Design Journey',
     items: [
       {
@@ -60,6 +66,12 @@ const chineseSidebar = [
       { text: '为什么需要有边界的自主性', link: '/zh/core-concepts/bounded-autonomy' },
       { text: '为什么 Knowledge Space 不只是 RAG', link: '/zh/core-concepts/knowledge-space-more-than-rag' },
       { text: '为什么 Odyssey 需要一门语言', link: '/zh/core-concepts/workflow-language' },
+    ],
+  },
+  {
+    text: 'Ody 语言',
+    items: [
+      { text: '语法与语义模型', link: '/zh/language/syntax-and-semantic-model' },
     ],
   },
   {

@@ -16,6 +16,8 @@ Odyssey 最初从 Canvas 开始。但从一开始，我们想服务的就不只�
 
 Ody 不是另一套 Agent 模型。它是 Odyssey 已有概念的文本表达：同一个 Agent Workflow，既可以在 Canvas 中被看见和操纵，也可以在 DSL 中被阅读和编辑。
 
+如果希望继续了解 Ody 语法如何对应 Odyssey 概念，可以阅读[《Ody 如何表达一个 Agent Workflow》](/zh/language/syntax-and-semantic-model)。
+
 ![Agent Workflow Canvas 与 DSL Edit 同时展示同一个 Workflow](/images/design-decisions/workflow-language/canvas-and-dsl-editor.png)
 
 *图 1：Canvas 与 DSL Edit 并排展示同一个 Agent Workflow。左侧以节点和连线表达结构，右侧以 Ody 源文本表达 Variable、节点与关系；`Synced With Canvas` 表示两种设计表面当前指向同一份语义配置。截图来自 Odyssey 当前 DSL Edit 实现，2026-10-25。*
@@ -115,6 +117,8 @@ workflow "Research Agent" version "0.1" {
 ```
 
 这段文本没有说明节点应该出现在 Canvas 的哪个位置，却完整表达了这个 Agent Action 的目的、认知边界、行动边界、状态以及控制关系。
+
+包含 Variable、四类节点、资源、Edge、命名 End 与 identity 边界的完整公开语法说明，见[《语法与语义模型》](/zh/language/syntax-and-semantic-model)。
 
 这里的 `knowledge` 与 `toolbox` 不是两组普通依赖。
 
