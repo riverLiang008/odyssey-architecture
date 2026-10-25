@@ -88,7 +88,7 @@ export default withMermaid(
       root: {
         label: 'English',
         lang: 'en',
-        link: '/core-concepts/two-level-canvas',
+        link: '/',
         themeConfig: {
           nav: [
             { text: 'Docs', link: '/core-concepts/two-level-canvas' },
@@ -111,7 +111,7 @@ export default withMermaid(
       zh: {
         label: '简体中文',
         lang: 'zh-CN',
-        link: '/zh/core-concepts/two-level-canvas',
+        link: '/zh/',
         themeConfig: {
           nav: [
             { text: '设计文档', link: '/zh/core-concepts/two-level-canvas' },
