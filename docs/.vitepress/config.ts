@@ -107,6 +107,7 @@ export default withMermaid(
           nav: [
             { text: 'Docs', link: '/core-concepts/two-level-canvas' },
             { text: 'Figma Design ↗', link: 'https://www.figma.com/design/P3EF9io2DhyhwkNYBVqB5Z/Odyssey-Design?node-id=1-2&p=f' },
+            { text: 'Live Demo ↗', link: 'https://shiny-dawn-ff43.houliang008.workers.dev/journeys' },
             { text: 'GitHub', link: 'https://github.com/riverLiang008/odyssey-architecture' },
           ],
           sidebar: englishSidebar,
@@ -130,6 +131,7 @@ export default withMermaid(
           nav: [
             { text: '设计文档', link: '/zh/core-concepts/two-level-canvas' },
             { text: 'Figma 设计 ↗', link: 'https://www.figma.com/design/P3EF9io2DhyhwkNYBVqB5Z/Odyssey-Design?node-id=1-2&p=f' },
+            { text: '在线 Demo ↗', link: 'https://shiny-dawn-ff43.houliang008.workers.dev/journeys' },
             { text: 'GitHub', link: 'https://github.com/riverLiang008/odyssey-architecture' },
           ],
           sidebar: chineseSidebar,
