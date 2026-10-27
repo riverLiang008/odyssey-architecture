@@ -124,6 +124,10 @@ Here, `knowledge` and `toolbox` are not simply two collections of dependencies.
 
 Knowledge Spaces define the information and semantic environments an Agent Action may rely on: its **cognitive space**. The Toolbox defines the capabilities the Agent may choose when acting on a problem or the outside world: its **action space**. The DSL places both alongside the Goal in the same node declaration, keeping the Agent's open-ended judgment inside boundaries supplied by the user.
 
+Those boundaries do not require every resource to be permanently hard-coded into the Workflow. Ody 0.2 supports typed references supplied by the system-input contract directly at their point of use, such as `$sys.target_knowledge_space$`. The same document-maintenance Workflow can therefore process events from different Knowledge Spaces instead of being copied for each one. The system still determines the target and validates Workspace ownership and authorization; the Agent cannot turn an arbitrary string into a new source of knowledge.
+
+This is one reason a DSL provides more value than a free-form prompt. It does not merely say that “a dynamic resource goes here.” It lets the Compiler verify the input's namespace, type, permitted field role, and writability. See [Syntax and Semantic Model](/language/syntax-and-semantic-model#bind-runtime-inputs-directly-at-their-point-of-use) for the syntax and [Compilation and Validation](/language/compilation-and-validation#dynamic-resource-bindings-require-two-validation-stages) for the two-stage validation boundary.
+
 ## Two Editing Methods, but Only One Semantic Model
 
 The most dangerous way to add a DSL would be to create two configurations: one stored by the Canvas and another stored by the text editor, followed by a negotiation over which one is newer.
@@ -154,6 +158,8 @@ This produces several important consequences:
 
 “Bidirectional synchronization” therefore does not mean that two editors continuously compete over the same text. It means that two authoring surfaces can read and write the same domain model through explicit conversion and validation boundaries.
 
+[How Ody Compiles and Validates a Workflow](/language/compilation-and-validation) describes this boundary in detail, including identity context, stale drafts, and the atomic Apply gate.
+
 ## Bringing Errors Closer to Where the Design Happens
 
 The Canvas can prevent some errors through controlled options, drag constraints, and connection rules. A text editor must allow users to write temporarily incomplete source; otherwise, it cannot behave like an actual editor.
@@ -173,6 +179,8 @@ Validation covers questions such as:
 Diagnostics point to source locations and distinguish errors, warnings, and context-required states that depend on external resources. Errors block Apply. Some unconnected Branch exits or unreachable nodes can remain as readiness warnings, allowing the user to continue editing a Workflow that is structurally valid but not yet complete.
 
 This matters because the value of a DSL is not merely writing less JSON. It turns Odyssey's domain constraints into a contract that editors, people, and generation systems can all validate.
+
+The diagnostic phases, result types, and distinction among error, warning, context-required, and stale are documented in [Compilation and Validation](/language/compilation-and-validation).
 
 ## Giving the LLM a Generation Interface, Not Control of the Canvas
 

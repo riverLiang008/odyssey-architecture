@@ -124,6 +124,10 @@ workflow "Research Agent" version "0.1" {
 
 Knowledge Spaces 定义 Agent Action 可以依赖哪些信息和语义环境，是它的**认知空间**；Toolbox 定义 Agent 可以选择哪些能力作用于问题与外部世界，是它的**行动空间**。DSL 将二者和 Goal 放在同一节点声明中，使 Agent 的开放式判断仍然处于用户给定的边界内。
 
+这种边界不必意味着每一项资源都永久写死在 Workflow 中。Ody 0.2 支持在使用位置声明由系统输入合同提供的类型化引用，例如 `$sys.target_knowledge_space$`。这样，同一份文档维护 Workflow 可以处理来自不同 Knowledge Space 的事件，而不是为每个空间复制一份配置；系统仍负责确定目标、验证 Workspace 归属与授权，Agent 不能把任意字符串当成新的知识入口。
+
+这正是 DSL 比自由提示词更有价值的地方。它不仅表达“这里需要一个动态资源”，还让 Compiler 检查这个输入来自哪个 namespace、是什么类型、能否用于当前字段，以及是否可写。具体语法与两阶段检查分别见[《语法与语义模型》](../ody-language/ody-syntax-and-semantic-model.zh.md#在使用位置直接绑定运行时输入)和[《编译与检查》](../ody-language/ody-compilation-and-validation.zh.md#动态资源绑定需要两阶段检查)。
+
 ## 两种编辑方式，但只有一份语义
 
 增加 DSL 最危险的做法，是在系统中制造两份配置：Canvas 保存一份，文本编辑器再保存一份，然后试图判断哪一份更新。
@@ -154,6 +158,8 @@ flowchart LR
 
 因此，“双向同步”不是两个编辑器实时争夺同一份文本。它意味着两种设计表面都可以读写同一个领域模型，并在越过边界之前经过明确的转换与检查。
 
+[《Ody 如何编译并检查一个 Workflow》](../ody-language/ody-compilation-and-validation.zh.md)进一步解释了这条边界，包括 identity context、stale 草稿与原子 Apply 门槛。
+
 ## DSL 让错误更接近设计发生的位置
 
 Canvas 可以通过可选项、拖拽限制和连接规则避免一部分错误。文本编辑则必须允许用户暂时写出不完整内容，否则它就无法像真正的编辑器一样工作。
@@ -173,6 +179,8 @@ Ody 因此把诊断作为语言的一部分，而不是 Apply 失败后的附加
 诊断会指向源码位置，并区分 error、warning 与需要外部资源的 context-required 状态。错误阻止 Apply；某些尚未连接的 Branch 出口或不可达节点可以作为 readiness warning 保留，让用户继续编辑一份结构合法但尚未完成的 Workflow。
 
 这种设计很重要，因为 DSL 的价值不只是“少写一些 JSON”。它把 Odyssey 的领域约束变成一份可以被编辑器、人和生成系统共同检查的合同。
+
+诊断阶段、编译结果，以及 error、warning、context-required 与 stale 之间的区别，见[《编译与检查》](../ody-language/ody-compilation-and-validation.zh.md)。
 
 ## 给 LLM 的不是画布控制权，而是一个生成接口
 

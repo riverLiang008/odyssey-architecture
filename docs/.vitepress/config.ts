@@ -33,6 +33,7 @@ const englishSidebar = [
     text: 'Ody Language',
     items: [
       { text: 'Syntax and Semantic Model', link: '/language/syntax-and-semantic-model' },
+      { text: 'Compilation and Validation', link: '/language/compilation-and-validation' },
     ],
   },
   {
@@ -72,6 +73,7 @@ const chineseSidebar = [
     text: 'Ody 语言',
     items: [
       { text: '语法与语义模型', link: '/zh/language/syntax-and-semantic-model' },
+      { text: '编译与检查', link: '/zh/language/compilation-and-validation' },
     ],
   },
   {

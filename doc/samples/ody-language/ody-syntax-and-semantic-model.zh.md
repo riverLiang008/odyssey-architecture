@@ -181,11 +181,51 @@ goal "Research ${agent.topic} and produce a concise brief.";
 
 插值只接受一个完整的 namespace 与 key，不支持对象成员访问、数组索引、算术或函数调用。需要动态构造复杂 JSON 时，应使用明确配置的 Script Tool，而不是把 Ody 扩展成通用表达式语言。
 
-当 `${...}` 需要作为普通文字出现时，可以使用 `literal(...)` 明确关闭插值语义：
+普通字符串中的 `${...}` 默认会被解释为 Variable 插值。如果整个 ValueSource 都是一段纯文字，可以使用 `literal(...)` 明确关闭插值语义：
 
 ```text
 goal literal("Show ${agent.topic} verbatim.");
 ```
+
+如果只需要在普通字符串的某个位置输出字面 `${`，也可以转义 `$`：
+
+```text
+goal "Show \${agent.topic} verbatim.";
+```
+
+两种写法生成的都是普通文本，而不是对 `agent.topic` 的读取。`literal(...)` 还可以包裹其他 JSON literal；它不是函数调用，也不会在运行时执行代码。
+
+### 在使用位置直接绑定运行时输入
+
+Ody 0.2 使用带有明确边界的 `$namespace.key$` 表达整值引用，同时保留 `${agent.topic}` 作为字符串内部的文本插值：
+
+```text
+query = $agent.question$;
+goal "Question: ${agent.question}";
+```
+
+两种写法并不等价。`$agent.question$` 把一个带类型的完整值交给目标字段；`${agent.question}` 先把 Variable 放入字符串，结果仍然是文本。写在引号里的 `"$agent.question$"` 也只是普通字符串，不会被悄悄解释成绑定。
+
+这套边界还允许 Workflow 接收由可信运行上下文提供的**类型化资源引用**。例如，同一个文档维护 Workflow 可以保留固定的规则 Knowledge Space，同时让系统根据本次文件事件提供目标 Knowledge Space：
+
+```text
+agent_action "Propose Changes" {
+  model "gpt-5";
+  knowledge ["Document Curator Playbook", $sys.target_knowledge_space$];
+  toolbox [find_related];
+  goal "Inspect the changed document using the assigned maintenance rules.";
+}
+
+config {
+  knowledgeSpaceId = $sys.target_knowledge_space$;
+}
+```
+
+这里的 `$sys.target_knowledge_space$` 不是一个恰好装着名称或 UUID 的 `string`。它是系统输入合同声明的只读 `KnowledgeSpace` 引用：配置时检查 key、类型和字段角色，运行时再解析真实资源并检查 Workspace 归属与授权。普通 `string` 或 `json` Variable 即使内容看起来像有效 ID，也不能冒充资源引用。
+
+Ody 不为此增加一个全局 `bindings` section。绑定写在它真正被使用的位置，让读者直接看见某个 Agent Action 的认知空间、某个 Tool 的检索目标或某个输出的写入目标来自哪里。同一个系统 key 出现在 `knowledge` 和 `knowledgeSpaceId` 时，必须在同一次运行中指向同一个资源；Canvas、Canonical JSON 与 Printer 也必须保留“来自系统事件”的身份，而不能把它冻结成编辑器预览时碰巧显示的 Knowledge Space。
+
+这项能力已经进入 Ody 0.2。Parser、Compiler、Printer、Canonical Schema 与 Canvas 都会识别并保留这种绑定；旧的 0.1 Workflow 可以在 DSL Edit 中显式升级为 0.2，经过检查后再 Apply，而不会在后台被静默改写。
 
 ## Agent Action：Goal、认知空间与行动空间
 
@@ -471,7 +511,7 @@ Ody 独立表达设计语义；Canvas 上下文负责保留视图和既有对象
 
 因此，这一页应该被理解为**当前 Ody 语法与 Odyssey 概念之间的公开映射**，而不是一份承诺永久兼容的通用语言标准。
 
-下一篇《Ody 的编译与检查》将继续解释：Parser、Compiler、资源 inventory 与 Canonical Schema 如何共同判断一份源文本能否安全应用到 Canvas，以及 error、warning、context-required 与 stale 分别意味着什么。
+继续阅读[《Ody 如何编译并检查一个 Workflow》](./ody-compilation-and-validation.zh.md)，了解 Parser、Compiler、资源 inventory 与 Canonical Schema 如何共同判断一份源文本能否安全应用到 Canvas，以及 error、warning、context-required 与 stale 分别意味着什么。
 
 ## 本文术语
 
@@ -488,6 +528,7 @@ Ody 独立表达设计语义；Canvas 上下文负责保留视图和既有对象
 ## 设计与实现来源
 
 - 当前语言规范：`odyssey/doc/planning/implementation/DSL/odyssey-workflow-dsl-v0.1-spec.md`；
+- 运行时变量绑定设计：`odyssey/doc/planning/implementation/DSL/runtime-variable-binding-design.md`；
 - 当前 `.ody` 示例：`odyssey/doc/planning/implementation/DSL/examples/`；
 - 首版双向编辑集成：`odyssey/doc/planning/implementation/DSL/dsl-edit-first-integration-report.md`；
 - 当前 Parser、Compiler 与 Printer：`odyssey/apps/web/src/domain/workflow-dsl/`；

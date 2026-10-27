@@ -181,11 +181,51 @@ goal "Research ${agent.topic} and produce a concise brief.";
 
 Interpolation accepts only one complete namespace and key. It does not support object-member access, array indexing, arithmetic, or function calls. Complex dynamic JSON should be constructed through an explicitly configured Script Tool instead of expanding Ody into a general expression language.
 
-When `${...}` must appear as ordinary text, `literal(...)` explicitly disables interpolation semantics:
+`${...}` inside an ordinary string is interpreted as Variable interpolation by default. When the entire ValueSource should remain plain text, `literal(...)` explicitly disables interpolation:
 
 ```text
 goal literal("Show ${agent.topic} verbatim.");
 ```
+
+If only one occurrence of `${` should remain literal inside an ordinary string, the `$` can be escaped instead:
+
+```text
+goal "Show \${agent.topic} verbatim.";
+```
+
+Both forms produce plain text rather than reading `agent.topic`. `literal(...)` can also wrap other JSON literals; it is not a function call and does not execute code at runtime.
+
+### Bind Runtime Inputs Directly at Their Point of Use
+
+Ody 0.2 uses the explicit `$namespace.key$` boundary for whole-value references while retaining `${agent.topic}` for textual interpolation inside strings:
+
+```text
+query = $agent.question$;
+goal "Question: ${agent.question}";
+```
+
+The forms are not interchangeable. `$agent.question$` passes a complete typed value to the target field. `${agent.question}` first places the Variable inside a string, so the result remains text. `"$agent.question$"` is also an ordinary string and is not silently reinterpreted as a binding.
+
+The same boundary lets a Workflow receive a **typed resource reference** from trusted runtime context. A document-maintenance Workflow, for example, can keep a fixed rules Knowledge Space while allowing the system to supply the Knowledge Space targeted by the current file event:
+
+```text
+agent_action "Propose Changes" {
+  model "gpt-5";
+  knowledge ["Document Curator Playbook", $sys.target_knowledge_space$];
+  toolbox [find_related];
+  goal "Inspect the changed document using the assigned maintenance rules.";
+}
+
+config {
+  knowledgeSpaceId = $sys.target_knowledge_space$;
+}
+```
+
+`$sys.target_knowledge_space$` is not a `string` that happens to contain a name or UUID. It is a read-only `KnowledgeSpace` reference declared by the system-input contract. The Compiler checks its key, type, and field role; an actual run resolves the resource and checks Workspace ownership and authorization. An ordinary `string` or `json` Variable cannot impersonate a resource reference even when its contents look like a valid ID.
+
+Ody does not add a global `bindings` section for this purpose. A binding appears where it is used, so the reader can see directly whether it supplies an Agent Action's cognitive space, a Tool's retrieval target, or an output destination. When the same system key appears in both `knowledge` and `knowledgeSpaceId`, it must identify the same resource during one run. Canvas, Canonical JSON, and the Printer preserve its “from system event” identity instead of freezing it to whichever Knowledge Space happened to appear in an editor preview.
+
+This capability is part of Ody 0.2. The Parser, Compiler, Printer, Canonical Schema, and Canvas all recognize and preserve these bindings. A legacy 0.1 Workflow can be explicitly upgraded to 0.2 in DSL Edit, reviewed, and then applied; it is not rewritten silently in the background.
 
 ## Agent Action: Goal, Cognitive Space, and Action Space
 
@@ -471,7 +511,7 @@ This does not mean that every language rule and future runtime behavior is froze
 
 This page should therefore be read as **the current public mapping between Ody syntax and Odyssey concepts**, not as a permanently compatible general language standard.
 
-The next article, “How Ody Compiles and Validates a Workflow,” will explain how the Parser, Compiler, resource inventory, and Canonical Schema decide whether source can be applied safely to the Canvas, and what error, warning, context-required, and stale mean.
+Continue to [“How Ody Compiles and Validates a Workflow”](./ody-compilation-and-validation.en.md) to see how the Parser, Compiler, resource inventory, and Canonical Schema decide whether source can be applied safely to the Canvas, and what error, warning, context-required, and stale mean.
 
 ## Terms Used in This Article
 
@@ -488,6 +528,7 @@ The next article, “How Ody Compiles and Validates a Workflow,” will explain 
 ## Design and Implementation Sources
 
 - Current language specification: `odyssey/doc/planning/implementation/DSL/odyssey-workflow-dsl-v0.1-spec.md`;
+- Runtime variable-binding design: `odyssey/doc/planning/implementation/DSL/runtime-variable-binding-design.md`;
 - Current `.ody` examples: `odyssey/doc/planning/implementation/DSL/examples/`;
 - First bidirectional editing integration: `odyssey/doc/planning/implementation/DSL/dsl-edit-first-integration-report.md`;
 - Current Parser, Compiler, and Printer: `odyssey/apps/web/src/domain/workflow-dsl/`;
