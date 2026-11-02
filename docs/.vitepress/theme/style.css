@@ -43,6 +43,30 @@
   letter-spacing: -0.01em;
 }
 
+/* Homepage brand motion: play once, then rest on the final V6 mark. */
+.odyssey-hero-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.odyssey-hero-mark__motion,
+.odyssey-hero-mark__fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odyssey-hero-mark__motion {
+    display: none;
+  }
+}
+
 /* Documentation hierarchy */
 .VPSidebarItem.level-0 {
   padding-bottom: 14px;
