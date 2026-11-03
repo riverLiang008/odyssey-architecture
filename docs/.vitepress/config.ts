@@ -37,6 +37,12 @@ const englishSidebar = [
     ],
   },
   {
+    text: 'Worked Example',
+    items: [
+      { text: 'Document Curator', link: '/cases/document-curator' },
+    ],
+  },
+  {
     text: 'Design Journey',
     items: [
       {
@@ -74,6 +80,12 @@ const chineseSidebar = [
     items: [
       { text: '语法与语义模型', link: '/zh/language/syntax-and-semantic-model' },
       { text: '编译与检查', link: '/zh/language/compilation-and-validation' },
+    ],
+  },
+  {
+    text: '完整案例',
+    items: [
+      { text: 'Document Curator', link: '/zh/cases/document-curator' },
     ],
   },
   {

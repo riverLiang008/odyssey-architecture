@@ -122,9 +122,9 @@ Knowledge Space
 - **Document Curator OdyJourney** 面向局部变化。当文档新增或更新时，它负责生成初始元数据，并更新受影响的局部关系；
 - **Knowledge Steward OdyJourney** 面向全局变化。它定期重新查看整个 Knowledge Space，协调跨文档关系，发现断裂、冲突、重复或需要人工确认的问题。
 
-它们不是一组绕开 Odyssey 设计语言的特殊后台服务。按照当前方向，Document Curator 与 Knowledge Steward 本身就是用 Odyssey 搭建的两个维护型 assistant：在上层 System Pattern Canvas 中定义参与维护的 Agent 及其关系，再在下层 Agent Workflow Canvas 中定义每个 Agent 的内部行动、控制结构、Knowledge Spaces、Toolbox 与状态边界。换句话说，Knowledge Space 的维护者也服从双层 Canvas、有边界自主性和 Agent Workflow 的同一套概念语法。
+它们不应成为一组绕开 Odyssey 设计语言的特殊后台服务。Document Curator 已经把这条方向落实为一份具体配置：它采用 Solo Pattern，并在 Agent Workflow Canvas 与 Ody 中组织 Agent Action、Task、Branch、Knowledge Spaces、Toolbox 与状态边界。换句话说，Knowledge Space 的维护者也服从双层 Canvas、有边界自主性和 Agent Workflow 的同一套概念语法。
 
-两个 assistant 的具体 Pattern、Agent 分工和 Workflow 仍将在后续独立设计；这里确认的是它们应由 Odyssey 自身的组合语言表达，而不是作为不可见的系统特例存在。
+[《Document Curator：让 Agent 提议改变，而不是直接修改知识》](/zh/cases/document-curator)完整说明了这份设计，以及它目前只能表达和检查配置、尚不能通过执行 kernel 运行的边界。Knowledge Steward 的具体 Pattern、Agent 分工和 Workflow 仍待独立设计。
 
 这两个角色不是为了给普通索引流程换一个更像 Agent 的名字。它们表达的是两类不同责任：一次文件变化需要快速进入系统，而知识整体还需要较慢、较全面的复查。
 
