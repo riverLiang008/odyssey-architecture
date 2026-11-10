@@ -4,6 +4,14 @@ Odyssey 的设计并不是以一套完整系统突然出现的。它的核心思
 
 这里记录的不是版本日志，也不是一条从一开始就注定正确的直线。每个故事都试图说明：一个抽象的设计问题，如何逐渐获得更明确的视觉语言与系统结构。
 
+## Odyssey 是如何制作的
+
+如果你想了解 Odyssey 的制作过程，可以先观看这支视频，再通过后面的文章了解设计背后的理由。
+
+<iframe src="https://www.youtube-nocookie.com/embed/VC8GtncRjPA" title="Odyssey 是如何制作的" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[在 YouTube 上观看](https://www.youtube.com/watch?v=VC8GtncRjPA)
+
 ## 演化故事
 
 - [Odyssey 图标是如何形成的](/zh/design-evolution/odyssey-mark)——从递归螺旋与正负形实验，到 Thinking Ownership 颜色和最终的 Spiral State Sequence。

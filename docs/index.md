@@ -65,14 +65,6 @@ Ody DSL has also become a second Workflow editing surface. Canvas and DSL operat
 
 Odyssey is therefore no longer only documentation about a possible product. It is a product prototype that can be operated, inspected, and changed. This documentation explains the reasoning behind that prototype. Its current purpose remains to validate the design language, information architecture, and interaction model rather than to demonstrate production-grade execution.
 
-## How Odyssey Is Made
-
-For a look at how Odyssey is made, watch the video below. The articles that follow explain the reasoning behind its design.
-
-<iframe src="https://www.youtube-nocookie.com/embed/VC8GtncRjPA" title="How Odyssey is made" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
-
-[Watch on YouTube](https://www.youtube.com/watch?v=VC8GtncRjPA)
-
 ## Where to Begin
 
 If Odyssey is new to you, the following path introduces the design in order:
