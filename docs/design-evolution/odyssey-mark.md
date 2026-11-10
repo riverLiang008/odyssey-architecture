@@ -6,6 +6,14 @@ Odyssey is not primarily concerned with whether one Prompt can produce an impres
 
 The mark therefore could not be only an initial, a robot, or an abstract “AI sparkle.” It needed to express an ongoing movement: beginning with uncertainty, gradually resolving through the combined work of people and Agents, and eventually forming a clear, coherent, and harmonious structure.
 
+## Watch the Design Process
+
+Watch the Odyssey mark’s design process in the video, then follow the visual experiments and design decisions in the article below.
+
+<iframe src="https://www.youtube-nocookie.com/embed/Fs4bXX7E8uM" title="Odyssey mark design process" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[Watch on YouTube](https://www.youtube.com/watch?v=Fs4bXX7E8uM)
+
 ## Beginning with a Recursive Spiral
 
 The original visual inspiration came from fractals and recursive spirals.

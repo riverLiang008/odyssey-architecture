@@ -6,6 +6,14 @@ Odyssey 关注的不是一次 Prompt 能否得到漂亮答案，而是一项 AI 
 
 因此，图标也不应该只是首字母、机器人或一颗抽象的“AI 星星”。它需要表达一种持续发生的运动：从不确定性出发，在人与 Agent 的共同作用下逐渐收束，最终形成清晰、统一而和谐的结构。
 
+## 观看设计过程
+
+你可以先通过视频观看 Odyssey 图标的设计过程，再沿着下文的视觉实验与设计取舍逐步阅读。
+
+<iframe src="https://www.youtube-nocookie.com/embed/Fs4bXX7E8uM" title="Odyssey 图标设计过程" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[在 YouTube 上观看](https://www.youtube.com/watch?v=Fs4bXX7E8uM)
+
 ## 从递归螺旋开始
 
 图标最初的造型灵感来自分形与递归螺旋。

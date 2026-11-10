@@ -65,6 +65,14 @@ Ody DSL 也已经成为另一种 Workflow 编辑界面。Canvas 与 DSL 围绕�
 
 因此，Odyssey 已经不只是“关于一个产品的文档”。它是一套可以操作、观察和继续修改的产品原型；这套文档解释的，是这个原型背后的设计理由。它目前仍以验证设计语言、信息架构和交互逻辑为主，而不是以证明生产级执行能力为目标。
 
+## Odyssey 是如何制作的
+
+如果你想了解 Odyssey 的制作过程，可以先观看这支视频，再通过后面的文章了解设计背后的理由。
+
+<iframe src="https://www.youtube-nocookie.com/embed/VC8GtncRjPA" title="Odyssey 是如何制作的" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[在 YouTube 上观看](https://www.youtube.com/watch?v=VC8GtncRjPA)
+
 ## 从哪里开始
 
 如果你第一次接触 Odyssey，可以按下面的顺序阅读：
