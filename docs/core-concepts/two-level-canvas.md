@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Why Two Canvas Levels?
 
 > Put “how multiple Agents collaborate” and “how one Agent works” at different design scales.
@@ -78,6 +82,24 @@ This consistency matters more than any particular layout. Color is not a decorat
 The Journey Canvas answers this question: what collaboration structure makes up this OdyJourney?
 
 In the current design, the system-level Canvas in the Journey Editor—currently labeled `System Canvas` in the UI—organizes execution structure along two dimensions. Horizontally, the execution chain consists of Input Guardrail, Main Execution, and Output Guardrail. The vertical dimension is expressed by Execution Behavior (currently `Behavior` in the UI), which spans the full execution chain in the second row of the Canvas. Main Execution uses the System Pattern selected by the designer for the OdyJourney, while the two Guardrails use the System’s fixed `Single` Pattern.
+
+### Why a Fixed Two-Dimensional Layout?
+
+<video controls playsinline preload="metadata" :src="withBase('/videos/two-level-canvas/HOW001_M1.mp4')" aria-label="Fixed two-dimensional layout design demonstration" style="display: block; width: 100%; height: auto;">
+  Your browser does not support embedded video.
+</video>
+
+*[Watch or download the layout demonstration](/videos/two-level-canvas/HOW001_M1.mp4). The motion shows how horizontal execution modules and cross-cutting Execution Behavior share one layout. Figure 2 below shows the names and structure of the current interface.*
+
+The Journey Canvas first needs to make two things clear: which modules perform the work, and which rules apply across execution.
+
+The horizontal direction represents execution modules. In the current design, Input Guardrail, Main Execution, and Output Guardrail form the execution chain. Within each module, a Pattern organizes collaboration among Agents. The modules perform the work; the Pattern defines how their Agents form a collaboration structure.
+
+Execution Behavior occupies a separate row spanning the execution chain. It represents policies, constraints, and observability responsibilities rather than adding another processing step after Output Guardrail. The layout separates how work progresses from the conditions governing execution while keeping their relationship visible.
+
+Fixed positions also give configuration state a consistent place in the layout. Configured parts use solid fills, while unconfigured positions remain visible. Users can see which capabilities have been configured and which remain empty without opening every configuration panel. Fill state indicates whether a position is configured; this differs from the responsibility categories expressed by Thinking Ownership colors.
+
+This is why the Journey Canvas keeps a fixed outer structure. The Agents and collaboration relationships within its modules may change, but users still know where to find the execution chain, its governing rules, and the parts that remain unconfigured.
 
 Each Pattern provides stable collaboration positions through Agent Slots. An Agent Slot is the position an Agent occupies in a Pattern: it carries a particular relational responsibility and can be occupied by a specific Agent. The Journey Canvas is concerned with where an Agent sits in a structure and how that position relates to others—not with immediately expanding every step inside that Agent.
 

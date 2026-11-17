@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # 为什么是双层 Canvas
 
 > 把“多个 Agent 如何协作”和“一个 Agent 如何工作”放在不同的设计尺度中。
@@ -78,6 +82,24 @@ Odyssey 同时需要二者。
 Journey Canvas 回答的是：这个 OdyJourney 由怎样的协作结构组成？
 
 在当前设计中，Journey Editor 的系统级 Canvas——当前 UI 中称为 `System Canvas`——把执行结构分成两个方向。横向是 Input Guardrail、Main Execution 与 Output Guardrail 组成的执行链；纵向维度由 Execution Behavior（当前 UI：`Behavior`）表达，它在画布的第二行横跨整条执行链。Main Execution 使用设计者为 OdyJourney 选择的 System Pattern，两侧 Guardrail 则使用系统固定的 `Single` Pattern。
+
+### 为什么采用固定的二维布局？
+
+<video controls playsinline preload="metadata" :src="withBase('/videos/two-level-canvas/HOW001_M1.mp4')" aria-label="固定二维布局的设计演示" style="display: block; width: 100%; height: auto;">
+  您的浏览器不支持内嵌视频。
+</video>
+
+*[观看或下载布局演示视频](/videos/two-level-canvas/HOW001_M1.mp4)。演示横向执行模块与横切的 Execution Behavior 如何组织在同一布局中；当前界面的名称与结构见下方图 2。*
+
+Journey Canvas 首先需要让用户看清两件事：哪些模块承担具体处理工作，以及哪些规则作用于整个执行过程。
+
+横向表示执行模块。在当前设计中，Input Guardrail、Main Execution 与 Output Guardrail 组成执行链；各模块内部由 Pattern 组织 Agent 的协作关系。模块承担具体处理工作，Pattern 则规定其中的 Agent 如何形成协作结构。
+
+Execution Behavior 位于另一行，横跨执行链。它表达执行过程中的策略、限制与可观察性责任，而不是在 Output Guardrail 之后增加一个处理步骤。这样的布局将“工作如何推进”与“执行受到什么约束”分开，同时保留两者的作用关系。
+
+固定位置还让配置状态具有空间上的连续性。已配置的部分使用实色填充，未配置的位置仍然保留，用户可以直接看出哪些能力已经配置、哪些仍然为空，而不必逐个打开配置面板。这里的填充状态表达“是否配置”，与 Thinking Ownership 用颜色区分责任的含义不同。
+
+这也是 Journey Canvas 保持固定外层结构的原因：模块中的 Agent 与协作关系可以变化，但用户仍然知道到哪里查看执行链、约束规则与尚未配置的部分。
 
 每个 Pattern 通过 Agent Slot 提供稳定的协作位置。Agent Slot 表示 Agent 在 Pattern 中占据的位置：它承担某种关系责任，并可以由一个具体 Agent 占据。Journey Canvas 关心的是 Agent 被放进什么结构、与其他位置如何关联，而不是立即展开这个 Agent 内部的每一步工作。
 
