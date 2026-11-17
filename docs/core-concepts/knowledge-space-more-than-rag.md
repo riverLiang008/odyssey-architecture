@@ -14,6 +14,8 @@ Improving the relevance of a single retrieval result does not fully answer these
 
 Odyssey therefore does not treat Knowledge Space as one retrieval parameter inside Agent Action. It is an independent asset: it preserves a file organization familiar to people, represents knowledge relationships that machines can use, and has a maintenance lifecycle of its own.
 
+The comparison below uses a basic retrieve-and-generate pipeline as its baseline. RAG systems can also include graphs, persistent assets, permissions, and maintenance processes. Odyssey's distinction is the explicit product model it gives those concerns, not a claim that RAG cannot support them.
+
 ## RAG Solves What Enters the Context
 
 RAG most directly answers: which content should enter the model context for the current question?

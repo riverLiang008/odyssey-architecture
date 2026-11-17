@@ -94,6 +94,8 @@ Agent 完成提议以后，`Validate Proposal` Task 接管控制权。
 
 它先检查候选是否具有正确结构，再根据当前上下文验证操作范围、证据、对象身份、版本、所有权与 Review Policy。只有技术上有效的候选才会产生一个明确的 `requiresReview` Boolean，并进入 `Choose Disposition` Branch。
 
+这里的证据检查针对可核验的来源身份、版本、定位信息和明确引用，不代表能够证明生成的 Summary、Guide 事实正确，或每一条语义关系都成立。
+
 这个 Boolean 由 Validator 产生，而不是由 Agent 在输出中自报。缺失、格式错误或无法验证的值都不能默认解释为“无需审核”。
 
 当前 Policy 只允许一组很窄的变化自动应用，例如：

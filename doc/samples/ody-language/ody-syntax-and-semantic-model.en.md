@@ -10,6 +10,12 @@ Ody is formally the **Odyssey Workflow DSL**. It is a declarative domain-specifi
 
 The current language version focuses on the **internal Workflow of one Agent**. It does not define an OdyJourney System Pattern, create Agent Slots, or describe node coordinates and Viewport state.
 
+::: info Scope and examples
+This page is for readers with basic programming knowledge who want to read or edit an Agent Workflow in DSL Edit. It covers the 0.1 syntax and the explicitly marked 0.2 additions. Whole-value bindings such as `$sys.target_knowledge_space$` require version `0.2`; the opening example uses `0.1` and does not use those additions.
+
+Except for the opening Workflow, code blocks are syntax fragments, not standalone documents. They assume the enclosing Workflow, declared Variables, Tool aliases, and resource inventory described in their sections. Compilation checks configuration; it does not execute the Workflow.
+:::
+
 ## Start with a Small Workflow
 
 One `.ody` document declares exactly one Agent Workflow. The following example assumes that the current Agent's editing context already contains a Knowledge Space named `Product Docs` and a fully configured Reusable Tool named `Product Lookup`:
@@ -208,6 +214,8 @@ The forms are not interchangeable. `$agent.question$` passes a complete typed va
 
 The same boundary lets a Workflow receive a **typed resource reference** from trusted runtime context. A document-maintenance Workflow, for example, can keep a fixed rules Knowledge Space while allowing the system to supply the Knowledge Space targeted by the current file event:
 
+The following fragments assume a declared Reusable Tool alias `find_related`. The `config` block belongs inside a `knowledge_retrieval` Tool declaration.
+
 ```text
 agent_action "Propose Changes" {
   model "gpt-5";
@@ -251,7 +259,7 @@ Loading an entire resource catalog for selection does not authorize the entire c
 
 ## Task: Declare Deterministic Tool Steps in Order
 
-A Task expresses Tool selection, configuration, and order determined by the user in advance:
+A Task expresses Tool selection, configuration, and order determined by the user in advance. Here, deterministic refers to those configured steps, not to identical outputs from a model or external service. This fragment assumes Agent Variables `topic` (`string`) and `brief` (`string`, `shared` or `user_managed`):
 
 ```text
 task "Summarize" {
@@ -291,7 +299,7 @@ The current language and product model support five System Tool kinds:
 | `script_execution` | Execute constrained Python or JavaScript |
 | `api_request` | Send a configured HTTP request |
 | `set_variable` | Update a Variable through an allowed operation |
-| `llm_call` | Invoke a model through a deterministic configuration |
+| `llm_call` | Invoke a model with inputs and invocation order configured in advance |
 
 Each Tool's Schema defines its fields. Unknown fields, missing required fields, invalid enums, and forbidden output bindings fail compilation. Ody only declares Tool configuration; the Compiler does not execute scripts, network requests, or model calls.
 

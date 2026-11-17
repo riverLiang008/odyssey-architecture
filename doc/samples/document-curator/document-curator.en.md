@@ -92,7 +92,7 @@ The Agent may decide whether and how to use the retrieval Tool, but it cannot in
 
 After the Agent completes its proposal, the `Validate Proposal` Task takes control.
 
-It first checks that the candidate has the required structure, then validates operation scope, evidence, object identity, revisions, ownership, and the Review Policy against the current context. Only a technically valid candidate produces an explicit `requiresReview` Boolean for the `Choose Disposition` Branch.
+It first checks that the candidate has the required structure, then validates operation scope, evidence, object identity, revisions, ownership, and the Review Policy against the current context. Here, evidence checks concern verifiable source identity, revision, locators, and explicit references. They do not prove that a generated Summary or Guide is factually correct or that every semantic relationship is justified. The automatic path is a Policy decision within this limited scope, not a guarantee of truth. Only a technically valid candidate produces an explicit `requiresReview` Boolean for the `Choose Disposition` Branch.
 
 The Validator produces this Boolean; the Agent does not report it as part of its own answer. A missing, malformed, or unverifiable value must never default to “no review required.”
 
@@ -112,7 +112,7 @@ Document Curator also places another Odyssey design claim into a concrete config
 
 In Canvas, node colors, connections, and the Branch make the boundary between open-ended judgment and deterministic control visible. In Ody, `agent_action`, `task`, `branch`, Variable bindings, Knowledge, and Toolbox declarations express the same boundary precisely.
 
-The target Knowledge Space is not a hard-coded resource name:
+The target Knowledge Space is not a hard-coded resource name. The following Ody 0.2 fragment omits the enclosing Workflow and the required `model` and `goal` fields. Its Tool alias is declared in the full case configuration:
 
 ```ody
 agent_action "Propose Local Changes" {

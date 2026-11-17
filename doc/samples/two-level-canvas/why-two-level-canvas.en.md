@@ -13,7 +13,7 @@ When we try to represent both the collaboration within an OdyJourney and the int
 
 The first question concerns system topology; the second concerns local execution. They involve different objects, scales, and editing rhythms. If they are forced onto the same plane, the Canvas may remain “infinite,” but the reader’s attention does not.
 
-This is why Odyssey uses two Canvas levels.
+This is why Odyssey uses two Canvas levels. An **OdyJourney** is the saved system-level configuration; an **Agent** occupies a position in that system and owns an internal Workflow.
 
 ## Why One Canvas Gradually Breaks Down
 
@@ -106,7 +106,7 @@ The current design presents four simplified starting points: Hub and Spoke, Circ
 
 *Figure 3: Selecting a System Pattern when creating an OdyJourney. Each option first expresses the shape of the relationship as a minimal topology, then offers a short indication of the work it suits. Figma node `417:33`, exported on 2026-10-03.*
 
-A Pattern is not an expanded Agent Workflow. It determines which positions exist at the system level and how they relate; the Agent in each position can still have its own Goal, resources, and internal Workflow. This article introduces only the role Pattern plays in the two-level structure. A separate chapter will explain why Pattern emphasizes relationships rather than roles.
+A Pattern is not an expanded Agent Workflow. It determines which positions exist at the system level and how they relate; the Agent in each position can still have its own Goal, resources, and internal Workflow. For the rationale behind these relationship structures, see [Relationships Before Roles](/core-concepts/pattern).
 
 ## Level Two: The Agent Workflow Canvas Defines How One Agent Works
 
@@ -143,8 +143,6 @@ When a configured Agent Slot is selected, the Journey Canvas remains in place wh
 Only when users choose to edit in depth do they enter the full Agent Workflow Canvas through Open canvas / fullscreen.
 
 The Preview is not a miniature editor. It is a wayfinding cue between the two levels: it neither pushes all the detail back into the Journey Canvas nor forces users to leave the system view without warning.
-
-Figure 5 expands this transition explicitly. The Agent Slot occupied by Research Agent and its read-only Workflow Preview both come from the Journey Canvas shown in Figure 2; the final step enters the full Agent Workflow Canvas shown in Figure 4. This allows users to retain the Agent’s position in the system before entering local editing.
 
 ## What This Decision Makes Understandable
 

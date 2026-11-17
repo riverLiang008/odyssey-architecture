@@ -88,7 +88,7 @@ Ody 有意忽略 layout。
 - 节点之间如何连接；
 - Workflow 可以从哪些 End 返回上层 OdyJourney。
 
-例如，一个经过简化的 Workflow 可以写成：
+下面的 Workflow 假设当前 Agent 可以访问名为 `Product Docs` 的 Knowledge Space，以及已完成配置的 Reusable Tool `Product Lookup`。它使用 `0.1`，不包含后文介绍的 `0.2` 运行时绑定：
 
 ```text
 workflow "Research Agent" version "0.1" {
@@ -105,7 +105,7 @@ workflow "Research Agent" version "0.1" {
       model "gpt-5";
       goal "Research ${agent.research_topic} and update the brief.";
       knowledge ["Product Docs"];
-      toolbox [WebSearch];
+      toolbox ["Product Lookup"];
     }
   }
 

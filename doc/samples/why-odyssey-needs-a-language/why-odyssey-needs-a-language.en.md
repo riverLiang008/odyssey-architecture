@@ -88,7 +88,7 @@ This choice allows the language to focus on more important questions:
 - How are nodes connected?
 - Through which Ends can the Workflow return to the parent OdyJourney?
 
-For example, a simplified Workflow can be written as:
+For example, the following Workflow assumes that the current Agent has access to a Knowledge Space named `Product Docs` and a fully configured Reusable Tool named `Product Lookup`. Its `0.1` version does not use the `0.2` runtime bindings discussed below:
 
 ```text
 workflow "Research Agent" version "0.1" {
@@ -105,7 +105,7 @@ workflow "Research Agent" version "0.1" {
       model "gpt-5";
       goal "Research ${agent.research_topic} and update the brief.";
       knowledge ["Product Docs"];
-      toolbox [WebSearch];
+      toolbox ["Product Lookup"];
     }
   }
 
@@ -243,7 +243,7 @@ It gains an Agent design language that people, interfaces, and generation system
 
 | Term | Meaning in this article |
 | --- | --- |
-| **Ody** | The proposed product-facing short name for the Odyssey Workflow DSL. |
+| **Ody** | The product-facing short name for the Odyssey Workflow DSL. |
 | **DSL Edit** | The Agent Workflow Canvas surface used to view, validate, and apply Ody source. |
 | **Canonical Workflow** | The formal Agent Workflow structure validated by shared Schemas and domain rules, used by application state and persistence. |
 | **Printer** | The domain module that deterministically expresses a Canonical Workflow as Ody source. |

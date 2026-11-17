@@ -68,7 +68,7 @@ This taxonomy begins not with “which API can this node connect to?” but with
 
 ### Task: The User Owns the Steps and Their Order
 
-Task expresses deterministic execution. The user selects the Tools, configures their parameters, and arranges the steps in advance.
+Task fixes Tool selection, configuration, and step order in advance. This is the sense in which Odyssey calls a Task deterministic: it does not let the Agent plan a different sequence. A configured model call can still produce different outputs, and an external service can still fail.
 
 ```text
 Task
@@ -79,7 +79,7 @@ Task
 
 These steps may execute automatically at runtime, but automatic execution does not mean that the Agent owns the decision. The Tool selection, order, and bindings were designed by the user, so Thinking Ownership remains User-managed.
 
-Task suits operations that must be predictable, inspectable, or strictly reproducible. It does not add Tools at runtime or change their order on its own. If the work requires open-ended planning, disguising it as an increasingly complicated Task only hides uncertainty inside configuration details.
+Task suits operations whose invocation rules and order must be predictable and inspectable. It does not add Tools at runtime or change their order on its own. If the work requires open-ended planning, disguising it as an increasingly complicated Task only hides uncertainty inside configuration details.
 
 ### Agent Action: The Agent Owns the Path, Not the World
 
@@ -110,7 +110,7 @@ These four parts form a compact conceptual relationship:
 
 Goal gives the Agent a direction, Knowledge Space provides an information environment for understanding the problem, and Toolbox provides the capabilities for taking action. Open-ended Agent judgment occurs in the space formed by those three boundaries, while Model is the reasoning configuration that carries the judgment.
 
-This is an elegant conceptual structure because it does not reduce Agent Action to a Prompt field. Whether it is genuinely easy to configure—and whether different users can consistently understand the four boundaries—still needs to be validated through actual use.
+These fields separate purpose, referenceable knowledge, and available capabilities. Whether users understand and configure those boundaries consistently still requires validation through actual use.
 
 ### Branch: Keep Routing Decisions in an Inspectable Structure
 
@@ -161,12 +161,14 @@ If Thinking Ownership exists only as node color, it can remain a visual metaphor
 
 Odyssey divides Agent Variables into four groups:
 
-| Variable group | Tool write | Agent Action write | Thinking Ownership |
+| Variable group | Task Tool write | Agent Action write | Thinking Ownership |
 | --- | ---: | ---: | --- |
 | **System** | No | No | Supplied and maintained by Odyssey |
 | **User-managed** | Yes | No | Maintained by the user through configured Tools |
 | **Shared** | Yes | Yes | Maintained by both user-defined structure and the Agent |
 | **Agent-managed** | No | Yes | Maintained by Agent Actions |
+
+In this table, `Task Tool write` means a Tool step configured inside a Task. Tools selected by an Agent Action remain subject to that Action's write boundary; using a Tool must not grant additional authority. These are design rules, not evidence of runtime enforcement.
 
 Two details are easy to misunderstand.
 

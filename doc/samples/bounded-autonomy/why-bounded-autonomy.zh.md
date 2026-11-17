@@ -68,7 +68,7 @@ Logic
 
 ### Task：用户拥有步骤与顺序
 
-Task 表达确定性执行。用户选择需要使用的 Tool，配置参数，并预先排列步骤顺序。
+Task 预先固定 Tool 的选择、配置与步骤顺序。这是 Odyssey 所说的“确定性”：Agent 不能自行规划另一套步骤。配置好的模型调用仍可能产生不同输出，外部服务也仍可能失败。
 
 ```text
 Task
@@ -79,7 +79,7 @@ Task
 
 运行时可以自动执行这些步骤，但自动执行并不等于 Agent 拥有决定。Tool 的选择、顺序和绑定已经由用户设计，因此这里的 Thinking Ownership 属于 User-managed。
 
-Task 适合那些必须可预测、可复查或严格复现的操作。它不会在运行时临时增加 Tool，也不会自行改变步骤顺序。如果工作需要开放式规划，把它伪装成一个越来越复杂的 Task，只会把不确定性藏进配置细节。
+Task 适合调用规则与步骤顺序必须可预测、可复查的操作。它不会在运行时临时增加 Tool，也不会自行改变步骤顺序。如果工作需要开放式规划，把它伪装成一个越来越复杂的 Task，只会把不确定性藏进配置细节。
 
 ### Agent Action：Agent 拥有路径，但不拥有世界
 
@@ -161,7 +161,7 @@ Odyssey 将 Tool 视为能力资源。Tool 本身描述一种可配置能力；�
 
 Odyssey 将 Agent Variable 分成四组：
 
-| Variable 分组 | Tool 写入 | Agent Action 写入 | Thinking Ownership |
+| Variable 分组 | Task Tool 写入 | Agent Action 写入 | Thinking Ownership |
 | --- | ---: | ---: | --- |
 | **System** | 否 | 否 | Odyssey 提供并维护 |
 | **User-managed** | 是 | 否 | 用户通过配置好的 Tool 维护 |

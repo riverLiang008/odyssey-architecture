@@ -14,6 +14,8 @@ figma: https://www.figma.com/design/P3EF9io2DhyhwkNYBVqB5Z/Odyssey-Design?node-i
 
 因此，Odyssey 没有把 Knowledge Space 设计成 Agent Action 里的一个检索参数。它是一项独立资产：既保存人熟悉的文件组织，也表达机器可以使用的知识关系，并拥有自己的维护生命周期。
 
+下文以基础的“检索再生成”流程作为比较基线。RAG 系统也可以包含图谱、持久化资产、权限与维护流程。Odyssey 的区别在于为这些问题提供明确的产品模型，而不是声称 RAG 无法支持它们。
+
 ## RAG 解决进入上下文的问题
 
 RAG 最直接地回答：面对当前问题，哪些内容值得进入模型上下文？

@@ -10,6 +10,12 @@ Ody 的正式定位是 **Odyssey Workflow DSL**。它是一门声明式领域语
 
 当前语言版本聚焦于**单个 Agent 的内部 Workflow**。它不负责定义 OdyJourney 的 System Pattern，不创建 Agent Slot，也不描述节点坐标和 Viewport。
 
+::: info 范围与示例
+本文面向具备基础编程知识、希望在 DSL Edit 中阅读或编辑 Agent Workflow 的读者，介绍 0.1 语法及明确标注的 0.2 扩展。`$sys.target_knowledge_space$` 等完整值绑定需要版本 `0.2`；开篇示例使用 `0.1`，不包含这些扩展。
+
+除开篇 Workflow 外，代码块均为语法片段，不是独立文档。它们依赖所在章节说明的外层 Workflow、已声明 Variable、Tool 别名和资源清单。编译检查配置，不执行 Workflow。
+:::
+
 ## 从一份很小的 Workflow 开始
 
 一个 `.ody` 文档只声明一个 Agent Workflow。下面的例子假设当前 Agent 的编辑上下文中，已经存在名为 `Product Docs` 的 Knowledge Space，以及完成配置的 Reusable Tool `Product Lookup`：
@@ -252,6 +258,8 @@ agent_action "Research" {
 ## Task：把确定性 Tool 步骤按顺序声明
 
 Task 表达用户预先确定的 Tool 选择、配置与执行顺序：
+
+以下片段假设 Agent 已声明 `topic`（`string`）和 `brief`（`string`，`shared` 或 `user_managed`）。Task 固定的是调用配置与顺序，不保证模型或外部服务每次返回相同结果。
 
 ```text
 task "Summarize" {
