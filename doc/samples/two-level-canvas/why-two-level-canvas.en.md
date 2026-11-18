@@ -6,6 +6,14 @@ import { withBase } from 'vitepress'
 
 > Put “how multiple Agents collaborate” and “how one Agent works” at different design scales.
 
+## Watch the Walkthrough
+
+Watch the video for an explanation of Odyssey's two Canvas levels, then read on for the design rationale and trade-offs.
+
+<iframe src="https://www.youtube-nocookie.com/embed/JvMxVTUjrpQ" title="Why Two Canvas Levels? — Odyssey walkthrough" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[Watch on YouTube](https://www.youtube.com/watch?v=JvMxVTUjrpQ)
+
 An infinite Canvas may seem like the most natural starting point for designing an Agent system: there is always room for more nodes and more connections. Put every object on the same surface, and the system appears to become visible.
 
 But space is not structure.

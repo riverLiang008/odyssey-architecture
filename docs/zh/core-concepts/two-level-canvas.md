@@ -6,6 +6,14 @@ import { withBase } from 'vitepress'
 
 > 把“多个 Agent 如何协作”和“一个 Agent 如何工作”放在不同的设计尺度中。
 
+## 观看讲解视频
+
+观看视频了解 Odyssey 的双层 Canvas，再继续阅读下文中的设计理由与取舍。
+
+<iframe src="https://www.youtube-nocookie.com/embed/JvMxVTUjrpQ" title="为什么是双层 Canvas — Odyssey 讲解" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border: 0;"></iframe>
+
+[在 YouTube 上观看](https://www.youtube.com/watch?v=JvMxVTUjrpQ)
+
 一张无限 Canvas 看起来像是设计 Agent 系统最自然的起点：空间足够大，节点可以继续增加，连线也可以继续延伸。只要把所有对象放进去，系统似乎就会变得可见。
 
 但空间并不等于结构。
