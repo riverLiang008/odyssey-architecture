@@ -50,6 +50,16 @@ Odyssey 因此选择了双层 Canvas。
 
 Odyssey 并不是因为传统 Workflow Canvas 没有价值才设计双层 Canvas。相反，Agent Workflow Canvas 仍然保留了 Workflow 表达控制流的优势。Odyssey 增加 Journey Canvas，是因为在 Workflow 之上还需要另一种视觉尺度来表达多个 Agent 如何组成一个系统。
 
+## 双层结构总览
+
+![Journey Canvas 与 Agent Workflow Canvas 的概念架构，通过选中的 Agent 连接两个设计尺度](/images/design-decisions/two-level-canvas/two-level-canvas-architecture.en.svg)
+
+*双层 Canvas 的概念架构示意。上层组织系统协作，下层描述选中 Agent 所拥有的 Workflow。向下箭头表示设计尺度之间的导航，不表示运行时执行顺序。图中配色用于区分结构分组，不编码 Thinking Ownership。*
+
+在 Journey 层，Input Guardrail、Main Execution 与 Output Guardrail 组成执行链，Execution Behavior 则表达贯穿执行链的策略、约束与可观察性责任。Pattern 定义 Agent Slot，配置好的 Agent 占据其中的位置。打开这个 Agent 的 Workflow，编辑尺度便从系统协作转向局部控制流。
+
+在 Workflow 内部，Agent Action 通过 Model、Goal、Knowledge Spaces 与 Toolbox 为开放式判断定义边界；Task 定义预先配置、依次执行的工具步骤；Branch 与 Loop 表达路由和有边界的迭代，Start 与 End 定义 Workflow 的入口和出口。图中的节点卡片说明各自的责任，并不构成一条具体执行流程。
+
 ## 颜色回答责任，层级回答尺度
 
 在解释双层 Canvas 之前，需要先说明 Odyssey 的另一个基础概念：Thinking Ownership。

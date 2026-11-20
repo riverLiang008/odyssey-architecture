@@ -50,6 +50,16 @@ If both continue to use the same nodes and edges, system-level structure is easi
 
 Odyssey did not introduce two Canvas levels because a conventional Workflow Canvas lacks value. On the contrary, the Agent Workflow Canvas preserves the strengths of Workflow notation for expressing control flow. Odyssey adds the Journey Canvas because the layer above the Workflow needs a different visual scale—one that can show how multiple Agents form a system.
 
+## The Two Levels at a Glance
+
+![Conceptual architecture of the Journey Canvas and the Agent Workflow Canvas, linked through the selected Agent](/images/design-decisions/two-level-canvas/two-level-canvas-architecture.en.svg)
+
+*Conceptual architecture overview. The upper level organizes system collaboration; the lower level describes the Workflow owned by one selected Agent. The downward arrow represents navigation between design scales, not runtime execution. The colors group diagram elements and do not encode Thinking Ownership.*
+
+At the Journey level, Input Guardrail, Main Execution, and Output Guardrail form the execution chain, while Execution Behavior defines policies, constraints, and observability responsibilities across it. A Pattern defines Agent Slots, and a configured Agent occupies a Slot. Opening that Agent's Workflow changes the editing scale from system collaboration to local control flow.
+
+Inside the Workflow, Agent Action combines Model, Goal, Knowledge Spaces, and Toolbox to bound open-ended judgment. Task defines preconfigured tool steps executed in sequence. Branch and Loop express routing and bounded iteration, while Start and End define Workflow entry and exit. These are node responsibilities, not a single example execution sequence.
+
 ## Color Answers Responsibility; Levels Answer Scale
 
 Before explaining the two Canvas levels, we need to introduce another foundational idea in Odyssey: Thinking Ownership.

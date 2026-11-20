@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1540" viewBox="0 0 1600 1540">
+<rect width="100%" height="100%" fill="#F5F7FB" />
+<text x="64" y="50.94" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#596B85" text-anchor="start">ODYSSEY / CONCEPTUAL ARCHITECTURE</text>
+<text x="64" y="115.18" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#17243A" text-anchor="start">Two Canvas Levels, Two Design Scales</text>
+<text x="64" y="157.75" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#596B85" text-anchor="start">System collaboration above. One Agent’s internal control flow below.</text>
+<rect x="40" y="201" width="1520" height="547" rx="18" fill="#FFFFFF" stroke="#DCE3EE" stroke-width="2" />
+<rect x="68" y="229" width="110" height="33" rx="10" fill="#E8EEFB" stroke="#E8EEFB" stroke-width="2" />
+<text x="123" y="249.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#365FA8" text-anchor="middle">LEVEL 1</text>
+<text x="200" y="252.73" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#17243A" text-anchor="start">Journey Canvas</text>
+<text x="200" y="289.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#596B85" text-anchor="start">OdyJourney: system structure and collaboration</text>
+<rect x="80" y="326" width="330" height="228" rx="14" fill="#F0F4FC" stroke="#D3DFF2" stroke-width="2" />
+<text x="245.0" y="364.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#263F68" text-anchor="middle">Input Guardrail</text>
+<text x="245.0" y="398.6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#596B85" text-anchor="middle">Fixed Single Pattern</text>
+<rect x="485" y="326" width="630" height="228" rx="14" fill="#F0F4FC" stroke="#D3DFF2" stroke-width="2" />
+<text x="800.0" y="364.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#263F68" text-anchor="middle">Main Execution</text>
+<text x="800.0" y="398.6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#596B85" text-anchor="middle">Selected System Pattern</text>
+<rect x="1190" y="326" width="330" height="228" rx="14" fill="#F0F4FC" stroke="#D3DFF2" stroke-width="2" />
+<text x="1355.0" y="364.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#263F68" text-anchor="middle">Output Guardrail</text>
+<text x="1355.0" y="398.6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#596B85" text-anchor="middle">Fixed Single Pattern</text>
+<line x1="414" y1="366" x2="474" y2="366" stroke="#7D8DA6" stroke-width="3" /><polygon points="474,366 463.1946347717679,371.21958640933474 463.1946347717679,360.78041359066526" fill="#7D8DA6" />
+<line x1="1126" y1="366" x2="1180" y2="366" stroke="#7D8DA6" stroke-width="3" /><polygon points="1180,366 1169.1946347717678,371.21958640933474 1169.1946347717678,360.78041359066526" fill="#7D8DA6" />
+<rect x="509" y="428" width="166" height="102" rx="12" fill="#FFFFFF" stroke="#CCD8EA" stroke-width="2" />
+<text x="592.0" y="463.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#263F68" text-anchor="middle">Pattern</text>
+<text x="592.0" y="495.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#596B85" text-anchor="middle">Defines positions</text>
+<rect x="707" y="428" width="166" height="102" rx="12" fill="#FFFFFF" stroke="#CCD8EA" stroke-width="2" />
+<text x="790.0" y="463.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#263F68" text-anchor="middle">Agent Slot</text>
+<text x="790.0" y="495.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#596B85" text-anchor="middle">Stable position</text>
+<rect x="905" y="428" width="186" height="102" rx="12" fill="#E7F1FF" stroke="#638FD2" stroke-width="3" />
+<text x="998.0" y="463.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#214B88" text-anchor="middle">Agent</text>
+<text x="998.0" y="495.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#596B85" text-anchor="middle">Occupies the Slot</text>
+<line x1="680" y1="477" x2="701" y2="477" stroke="#7D8DA6" stroke-width="3" /><polygon points="701,477 690.1946347717678,482.21958640933474 690.1946347717678,471.78041359066526" fill="#7D8DA6" />
+<line x1="878" y1="477" x2="899" y2="477" stroke="#7D8DA6" stroke-width="3" /><polygon points="899,477 888.1946347717678,482.21958640933474 888.1946347717678,471.78041359066526" fill="#7D8DA6" />
+<text x="245" y="457.43" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#596B85" text-anchor="middle">Checks incoming work</text>
+<text x="245" y="494.43" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#596B85" text-anchor="middle">before Main Execution</text>
+<text x="1355" y="457.43" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#596B85" text-anchor="middle">Checks outgoing results</text>
+<text x="1355" y="494.43" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#596B85" text-anchor="middle">after Main Execution</text>
+<rect x="80" y="579" width="1440" height="122" rx="14" fill="#EAF4F1" stroke="#C6DFD6" stroke-width="2" />
+<text x="800" y="618.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#286350" text-anchor="middle">Execution Behavior</text>
+<text x="800" y="655.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#497565" text-anchor="middle">Policies · Constraints · Observability — apply across the entire execution chain</text>
+<line x1="800" y1="759" x2="800" y2="841" stroke="#365FA8" stroke-width="4" /><polygon points="800,841 794.7804135906653,830.1946347717678 805.2195864093347,830.1946347717678" fill="#365FA8" />
+<rect x="864" y="766" width="591" height="64" rx="10" fill="#F5F7FB" stroke="#F5F7FB" stroke-width="2" />
+<text x="886" y="789.92" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#365FA8" text-anchor="start">Select an Agent → open its Workflow</text>
+<text x="886" y="820.94" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#596B85" text-anchor="start">Navigation between design scales, not an execution edge</text>
+<rect x="40" y="864" width="1520" height="539" rx="18" fill="#FFFFFF" stroke="#DCE3EE" stroke-width="2" />
+<rect x="68" y="892" width="110" height="33" rx="10" fill="#E8EEFB" stroke="#E8EEFB" stroke-width="2" />
+<text x="123" y="912.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#365FA8" text-anchor="middle">LEVEL 2</text>
+<text x="200" y="914.73" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#17243A" text-anchor="start">Agent Workflow Canvas</text>
+<text x="200" y="952.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#596B85" text-anchor="start">Owned by the selected Agent: local control flow</text>
+<rect x="80" y="993" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="310" y="1032.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">Agent Action</text>
+<text x="310" y="1055.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Open-ended judgment</text>
+<rect x="570" y="993" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="800" y="1032.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">Task</text>
+<text x="800" y="1055.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Preconfigured tool steps</text>
+<rect x="1060" y="993" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="1290" y="1032.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">Branch</text>
+<text x="1290" y="1071.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Conditional routing</text>
+<rect x="80" y="1132" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="310" y="1171.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">Loop</text>
+<text x="310" y="1210.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Bounded iteration</text>
+<rect x="570" y="1132" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="800" y="1171.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">Start</text>
+<text x="800" y="1210.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Workflow entry</text>
+<rect x="1060" y="1132" width="460" height="113" rx="14" fill="#FAFBFE" stroke="#DCE3EE" stroke-width="2" />
+<text x="1290" y="1171.58" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#17243A" text-anchor="middle">End</text>
+<text x="1290" y="1210.26" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#596B85" text-anchor="middle">Workflow exit</text>
+<text x="80" y="1306.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#465B77" text-anchor="start">Nodes describe actions and control boundaries within one Agent.</text>
+<text x="80" y="1345.09" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#465B77" text-anchor="start">Workflow edges express local control flow, not collaboration between Agents.</text>
+<text x="64" y="1446.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#596B85" text-anchor="start">READING THE DIAGRAM</text>
+<text x="64" y="1487.75" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#263F68" text-anchor="start">Pattern → Agent Slot → Agent → owned Agent Workflow</text>
+<text x="64" y="1521.94" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#596B85" text-anchor="start">Conceptual structure, not a product screenshot or a runtime execution trace.</text>
+<text x="310" y="1090.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#596B85" text-anchor="middle">Model · Goal · Knowledge Spaces · Toolbox</text><text x="800" y="1090.11" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#596B85" text-anchor="middle">Sequential tool execution</text></svg>
